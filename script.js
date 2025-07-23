@@ -821,12 +821,12 @@ const projectsData = [
         ],
         technologies: ['Python', 'TensorFlow', 'Flask', 'React', 'MongoDB', 'Chart.js'],
         images: [
-            './projects/feedbackhub/feedbackhub (1).png',
-            './projects/feedbackhub/feedbackhub (2).png',
-            './projects/feedbackhub/feedbackhub (3).png',
-            './projects/feedbackhub/feedbackhub (4).png',
-            './projects/feedbackhub/feedbackhub (5).png',
-            './projects/feedbackhub/feedbackhub (6).png'
+            './projects/feedbackhub/feedbackhub(1).png',
+            './projects/feedbackhub/feedbackhub(2).png',
+            './projects/feedbackhub/feedbackhub(3).png',
+            './projects/feedbackhub/feedbackhub(4).png',
+            './projects/feedbackhub/feedbackhub(5).png',
+            './projects/feedbackhub/feedbackhub(6).png'
         ],
         liveUrl: 'https://sahil-katariya.github.io/FeedBack-Hub/',
         githubUrl: 'https://github.com/Sahil-Katariya/FeedBack-Hub',
@@ -850,10 +850,10 @@ const projectsData = [
         ],
         technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'jQuery'],
         images: [
-            './projects/school/school (1).png',
-            './projects/school/school (2).png',
-            './projects/school/school (3).png',
-            './projects/school/school (4).png'
+            './projects/school/school(1).png',
+            './projects/school/school(2).png',
+            './projects/school/school(3).png',
+            './projects/school/school(4).png'
         ],
         liveUrl: 'https://sahil-katariya.github.io/sarasvati-school/',
         githubUrl: 'https://www.github.com/sahil-katariya/sarasvati-school/',
@@ -877,8 +877,8 @@ const projectsData = [
         ],
         technologies: ['Python', 'OpenCV', 'TensorFlow', 'ROS', 'NumPy', 'Matplotlib'],
         images: [
-            './projects/anav/anav (1).png',
-            './projects/anav/anav (2).png'
+            './projects/anav/anav(1).png',
+            './projects/anav/anav(2).png'
         ],
         liveUrl: 'https://github.com/Sahil-Katariya/QuodeCopter',
         githubUrl: 'https://github.com/Sahil-Katariya/QuodeCopter',
@@ -902,9 +902,9 @@ const projectsData = [
         ],
         technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
         images: [
-            './projects/animalheaven/animalheaven (1).png',
-            './projects/animalheaven/animalheaven (2).png',
-            './projects/animalheaven/animalheaven (3).png'
+            './projects/animalheaven/animalheaven(1).png',
+            './projects/animalheaven/animalheaven(2).png',
+            './projects/animalheaven/animalheaven(3).png'
         ],
         liveUrl: '',
         githubUrl: '',
@@ -928,8 +928,8 @@ const projectsData = [
         ],
         technologies: ['Python', 'OpenCV', 'dlib', 'Flask', 'SQLite', 'NumPy'],
         images: [
-            './projects/attendance/attendance (1).png',
-            './projects/attendance/attendance (2).png'
+            './projects/attendance/attendance(1).png',
+            './projects/attendance/attendance(2).png'
         ],
         liveUrl: '',
         githubUrl: '',
