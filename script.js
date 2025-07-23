@@ -850,7 +850,7 @@ const projectsData = [
         ],
         technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'jQuery'],
         images: [
-            './projects/school/school(1).png',
+            './school(1).png',
             './projects/school/school(2).png',
             './projects/school/school(3).png',
             './projects/school/school(4).png'
