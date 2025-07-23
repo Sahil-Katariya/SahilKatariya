@@ -806,7 +806,7 @@ const projectsData = [
     },
     {
         id: 2,
-        title: 'ANAV Autonomous Drone Navigation',
+        title: 'ANAVY Autonomous Navigation',
         description: 'GPS-independent vision-based navigation system for autonomous drone traversal',
         longDescription: 'Developed a sophisticated GPS-independent, vision-based navigation system for autonomous drone traversal as part of the ISRO Robotics Challenge 2025. The system uses advanced computer vision algorithms and machine learning for real-time navigation and obstacle avoidance.',
         category: ['mobile', 'fullstack'],
@@ -872,7 +872,7 @@ const projectsData = [
             'Custom reporting and visualization',
             'Data-driven recommendation engine'
         ],
-        technologies: ['Python', 'Flask', 'React', 'MongoDB', 'Chart.js'],
+        technologies: ['Python', 'TensorFlow', 'Flask', 'React', 'MongoDB', 'Chart.js'],
         images: [
             'https://via.placeholder.com/800x500/8b5cf6/ffffff?text=FeedBack+Dashboard',
             'https://via.placeholder.com/800x500/ec4899/ffffff?text=Analytics+View',

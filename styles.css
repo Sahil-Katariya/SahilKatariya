@@ -615,7 +615,6 @@ a, button, input, textarea, select {
 
 /* Scroll Indicator */
 .scroll-indicator {
-    padding: 0 5rem;
     position: absolute;
     bottom: 2rem;
     left: 50%;
