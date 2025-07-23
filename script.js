@@ -1066,3 +1066,100 @@ class ProjectManager {
         });
     }
 }
+
+// Counter Animation
+function initializeCounterAnimations() {
+    const counters = document.querySelectorAll('[data-target]');
+
+    const animateCounter = (counter) => {
+        const target = parseFloat(counter.getAttribute('data-target'));
+        const increment = target / 100;
+        let current = 0;
+
+        const updateCounter = () => {
+            if (current < target) {
+                current += increment;
+                if (current > target) current = target;
+
+                if (target % 1 !== 0) {
+                    counter.textContent = current.toFixed(2);
+                } else {
+                    counter.textContent = Math.floor(current);
+                }
+
+                requestAnimationFrame(updateCounter);
+            }
+        };
+
+        updateCounter();
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    });
+
+    counters.forEach(counter => observer.observe(counter));
+}
+
+// Floating Animations
+function initializeFloatingAnimations() {
+    const floatingElements = document.querySelectorAll('.floating-animation');
+
+    floatingElements.forEach((element, index) => {
+        element.style.animationDelay = `${index * 0.5}s`;
+    });
+}
+
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize page loader
+    const pageLoader = new PageLoader();
+
+    // Initialize other components after page loads
+    pageLoader.onComplete(() => {
+        // Initialize particle system
+        const canvas = document.getElementById('particles-canvas');
+        if (canvas) {
+            new ParticleSystem(canvas);
+        }
+
+        // Initialize typing animation
+        const typingElement = document.getElementById('typing-text');
+        if (typingElement) {
+            const texts = [
+                'Full Stack Developer',
+                'AI/ML Engineer',
+                'Robotics Enthusiast',
+                'Problem Solver',
+                'Innovation Driver'
+            ];
+            new TypingAnimation(typingElement, texts, 100);
+        }
+
+        // Initialize theme manager
+        new ThemeManager();
+
+        // Initialize contact form
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            new ContactForm();
+        }
+
+        // Initialize mobile menu
+        initMobileMenu();
+
+        // Initialize custom cursor
+        initCustomCursor();
+
+        // Initialize counter animations
+        initializeCounterAnimations();
+
+        // Initialize floating animations
+        initializeFloatingAnimations();
+    });
+});

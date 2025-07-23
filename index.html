@@ -124,27 +124,29 @@
             <canvas id="particles-canvas"></canvas>
         </div>
         <div class="hero-content">
-            <div class="hero-intro">
-                <span class="greeting">Hello, I'm</span>
-                <h1 class="hero-name" id="hero-name">Sahil Katariya</h1>
-            </div>
-            <h2 class="hero-title">
-                <span class="typing-text" id="typing-text"></span>
-                <span class="cursor">|</span>
-            </h2>
-            <p class="hero-subtitle">
-                Detail-oriented IT engineering student passionate about delivering
-                impactful real-world solutions through full-stack and AI technologies
-            </p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn-primary">
-                    <span>View Work</span>
-                    <i class="arrow">→</i>
-                </a>
-                <a href="#contact" class="btn-secondary">
-                    <span>Get In Touch</span>
-                    <i class="arrow">→</i>
-                </a>
+            <div class="hero-text">
+                <div class="hero-intro">
+                    <span class="greeting">Hello, I'm</span>
+                    <h1 class="hero-name" id="hero-name">Sahil Katariya</h1>
+                </div>
+                <h2 class="hero-title">
+                    <span class="typing-text" id="typing-text"></span>
+                    <span class="cursor">|</span>
+                </h2>
+                <p class="hero-subtitle">
+                    Detail-oriented IT engineering student passionate about delivering
+                    impactful real-world solutions through full-stack and AI technologies
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn-primary">
+                        <span>View Work</span>
+                        <i class="arrow">→</i>
+                    </a>
+                    <a href="#contact" class="btn-secondary">
+                        <span>Get In Touch</span>
+                        <i class="arrow">→</i>
+                    </a>
+                </div>
             </div>
             <div class="scroll-indicator">
                 <div class="scroll-arrow"></div>
@@ -170,6 +172,7 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-grid">
+                    
                     <div class="about-text">
                         <div class="about-intro">
                             <h3>Hello! I'm Sahil Katariya</h3>
@@ -184,7 +187,8 @@
                                 Passionate about delivering impactful real-world solutions and growing in a collaborative, innovation-driven environment through full-stack and AI technologies. Seeking opportunities to apply my technical expertise in creating cutting-edge solutions that make a difference.
                             </p>
                         </div>
-
+                        
+                
                         <div class="about-experience">
                             <h4>Professional Experience</h4>
                             <div class="experience-timeline">
@@ -216,22 +220,28 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="about-stats">
-                            <div class="stat-item">
-                                <span class="stat-number" data-target="6">0</span>
-                                <span class="stat-label">Projects Completed</span>
+                        
+                        <div class="about-highlights">
+                            <div class="highlight-item glass-card scale-on-hover">
+                                <div class="highlight-icon">🚀</div>
+                                <div class="highlight-content">
+                                    <h5>Innovation Focus</h5>
+                                    <p>Passionate about cutting-edge technologies and innovative solutions</p>
+                                </div>
                             </div>
-                            <div class="stat-item">
-                                <span class="stat-number" data-target="10">0</span>
-                                <span class="stat-label">Compitions Participated</span>
+                            <div class="highlight-item glass-card scale-on-hover">
+                                <div class="highlight-icon">🎯</div>
+                                <div class="highlight-content">
+                                    <h5>Problem Solver</h5>
+                                    <p>Analytical mindset with focus on delivering impactful real-world solutions</p>
+                                </div>
                             </div>
-                            <!-- <div class="stat-item">
-                                <span class="stat-number" data-target="3">0</span>
-                                <span class="stat-label">Years Experience</span>
-                            </div> -->
-                            <div class="stat-item">
-                                <span class="stat-number" data-target="7.17">7.17</span>
-                                <span class="stat-label">CGPA</span>
+                            <div class="highlight-item glass-card scale-on-hover">
+                                <div class="highlight-icon">🌟</div>
+                                <div class="highlight-content">
+                                    <h5>Team Player</h5>
+                                    <p>Collaborative approach with strong leadership and communication skills</p>
+                                </div>
                             </div>
                         </div>
 
@@ -326,6 +336,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="skills-section">
                         <h3>Technical Skills</h3>
                         <div class="skills-grid">
@@ -410,6 +421,20 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="hero-stats glass-card">
+                            <div class="stat-item">
+                                <span class="stat-number gradient-text" data-target="6">0</span>
+                                <span class="stat-label">Projects</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number gradient-text" data-target="10">0</span>
+                                <span class="stat-label">Competitions</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number gradient-text" data-target="7.17">7.17</span>
+                                <span class="stat-label">CGPA</span>
                             </div>
                         </div>
                         <div class="tools-section">
@@ -542,20 +567,38 @@
         </div>
     </section>
 
-    <section id="projects" class="projects">
+    <section id="projects" class="projects section-padding">
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
 
-            <!-- Project Filters -->
-            <!-- <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">
-                    All Projects
-                </button>
-                <button class="filter-btn" data-filter="web">Web Apps</button>
-                <button class="filter-btn" data-filter="mobile">Mobile</button>
-                <button class="filter-btn" data-filter="design">Design</button>
-                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
-            </div> -->
+            <!-- Featured Project Showcase -->
+            <div class="featured-project glass-card" id="featured-project">
+                <div class="featured-content">
+                    <div class="featured-info">
+                        <span class="featured-badge">Featured Project</span>
+                        <h3 class="featured-title">Lunar DEM Generation (LDEM)</h3>
+                        <p class="featured-description">
+                            Developed a comprehensive Digital Elevation Model (DEM) pipeline using mono images for lunar surface mapping.
+                            This project was part of the ISRO Bharatiya Antariksh Hackathon, utilizing advanced computer vision techniques.
+                        </p>
+                        <div class="featured-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">QGIS</span>
+                            <span class="tech-tag">Computer Vision</span>
+                        </div>
+                        <div class="featured-actions">
+                            <a href="#" class="btn-primary">View Project</a>
+                            <a href="#" class="btn-secondary">View Code</a>
+                        </div>
+                    </div>
+                    <div class="featured-visual">
+                        <div class="featured-image">
+                            <div class="image-placeholder">🌙</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Projects Grid -->
             <div class="projects-grid" id="projects-grid">
@@ -624,21 +667,21 @@
                         </div>
 
                         <div class="contact-methods">
-                            <div class="contact-method">
+                            <div class="contact-method glass-card glow-on-hover">
                                 <div class="method-icon">📧</div>
                                 <div class="method-details">
                                     <h4>Email</h4>
                                     <p>sahilkatariya2609@gmail.com</p>
                                 </div>
                             </div>
-                            <div class="contact-method">
+                            <div class="contact-method glass-card glow-on-hover">
                                 <div class="method-icon">📱</div>
                                 <div class="method-details">
                                     <h4>Phone</h4>
                                     <p>+91 8980657423</p>
                                 </div>
                             </div>
-                            <div class="contact-method">
+                            <div class="contact-method glass-card glow-on-hover">
                                 <div class="method-icon">📍</div>
                                 <div class="method-details">
                                     <h4>Location</h4>
@@ -650,16 +693,16 @@
                         <div class="social-links">
                             <h4>Follow Me</h4>
                             <div class="social-icons">
-                                <a href="#" class="social-link" aria-label="LinkedIn">
+                                <a href="#" class="social-link magnetic" aria-label="LinkedIn">
                                     <span>💼</span>
                                 </a>
-                                <a href="#" class="social-link" aria-label="GitHub">
+                                <a href="#" class="social-link magnetic" aria-label="GitHub">
                                     <span>🐙</span>
                                 </a>
-                                <a href="#" class="social-link" aria-label="Twitter">
+                                <a href="#" class="social-link magnetic" aria-label="Twitter">
                                     <span>🐦</span>
                                 </a>
-                                <a href="#" class="social-link" aria-label="Dribbble">
+                                <a href="#" class="social-link magnetic" aria-label="Dribbble">
                                     <span>🏀</span>
                                 </a>
                             </div>
