@@ -796,68 +796,15 @@ const projectsData = [
         ],
         technologies: ['Python', 'OpenCV', 'QGIS', 'NumPy', 'SciPy', 'Matplotlib'],
         images: [
-            'https://via.placeholder.com/800x500/6366f1/ffffff?text=Lunar+DEM+Pipeline',
-            'https://via.placeholder.com/800x500/8b5cf6/ffffff?text=Terrain+Reconstruction',
-            'https://via.placeholder.com/800x500/ec4899/ffffff?text=QGIS+Visualization'
+            './projects/ldem/ldem (1).png',
+            './projects/ldem/ldem (2).png'
         ],
-        liveUrl: '#',
-        githubUrl: '#',
+        liveUrl: '',
+        githubUrl: '',
         gradient: 'linear-gradient(135deg, #6366f1, #8b5cf6)'
     },
     {
-        id: 2,
-        title: 'ANAVY Autonomous Navigation',
-        description: 'GPS-independent vision-based navigation system for autonomous drone traversal',
-        longDescription: 'Developed a sophisticated GPS-independent, vision-based navigation system for autonomous drone traversal as part of the ISRO Robotics Challenge 2025. The system uses advanced computer vision algorithms and machine learning for real-time navigation and obstacle avoidance.',
-        category: ['mobile', 'fullstack'],
-        tags: ['Python', 'Computer Vision', 'Robotics', 'AI'],
-        features: [
-            'GPS-independent navigation system',
-            'Real-time computer vision processing',
-            'Autonomous obstacle avoidance',
-            'Machine learning-based path planning',
-            'Drone control and stabilization',
-            'Real-time video processing',
-            'Advanced sensor fusion'
-        ],
-        technologies: ['Python', 'OpenCV', 'TensorFlow', 'ROS', 'NumPy', 'Matplotlib'],
-        images: [
-            'https://via.placeholder.com/800x500/ec4899/ffffff?text=Drone+Navigation',
-            'https://via.placeholder.com/800x500/f59e0b/ffffff?text=Vision+System',
-            'https://via.placeholder.com/800x500/10b981/ffffff?text=Path+Planning'
-        ],
-        liveUrl: '#',
-        githubUrl: '#',
-        gradient: 'linear-gradient(135deg, #ec4899, #f59e0b)'
-    },
-    {
         id: 3,
-        title: 'School Website',
-        description: 'Responsive and modern school website with comprehensive features',
-        longDescription: 'Developed a comprehensive school website with modern design and responsive layout. The website includes features for student information management, event announcements, faculty profiles, and administrative functions. Built with focus on user experience and accessibility.',
-        category: ['web', 'design'],
-        tags: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
-        features: [
-            'Responsive design for all devices',
-            'Student information management',
-            'Event and announcement system',
-            'Faculty and staff profiles',
-            'Administrative dashboard',
-            'Contact and inquiry forms',
-            'SEO optimized structure'
-        ],
-        technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'jQuery'],
-        images: [
-            'https://via.placeholder.com/800x500/10b981/ffffff?text=School+Homepage',
-            'https://via.placeholder.com/800x500/3b82f6/ffffff?text=Student+Portal',
-            'https://via.placeholder.com/800x500/8b5cf6/ffffff?text=Admin+Dashboard'
-        ],
-        liveUrl: '#',
-        githubUrl: '#',
-        gradient: 'linear-gradient(135deg, #10b981, #3b82f6)'
-    },
-    {
-        id: 4,
         title: 'FeedBack Hub',
         description: 'Centralized platform to analyze feedback and drive data-informed improvements',
         longDescription: 'Developed a comprehensive feedback analysis platform using AI and machine learning to centralize feedback collection and analysis. The system provides actionable insights through advanced analytics, sentiment analysis, and automated reporting to drive data-informed business improvements.',
@@ -874,16 +821,97 @@ const projectsData = [
         ],
         technologies: ['Python', 'TensorFlow', 'Flask', 'React', 'MongoDB', 'Chart.js'],
         images: [
-            'https://via.placeholder.com/800x500/8b5cf6/ffffff?text=FeedBack+Dashboard',
-            'https://via.placeholder.com/800x500/ec4899/ffffff?text=Analytics+View',
-            'https://via.placeholder.com/800x500/6366f1/ffffff?text=AI+Insights'
+            './projects/feedbackhub/feedbackhub (1).png',
+            './projects/feedbackhub/feedbackhub (2).png',
+            './projects/feedbackhub/feedbackhub (3).png',
+            './projects/feedbackhub/feedbackhub (4).png',
+            './projects/feedbackhub/feedbackhub (5).png',
+            './projects/feedbackhub/feedbackhub (6).png'
         ],
-        liveUrl: '#',
-        githubUrl: '#',
+        liveUrl: 'https://sahil-katariya.github.io/FeedBack-Hub/',
+        githubUrl: 'https://github.com/Sahil-Katariya/FeedBack-Hub',
         gradient: 'linear-gradient(135deg, #8b5cf6, #ec4899)'
     },
     {
+        id: 4,
+        title: 'School Website',
+        description: 'Responsive and modern school website with comprehensive features',
+        longDescription: 'Developed a comprehensive school website with modern design and responsive layout. The website includes features for student information management, event announcements, faculty profiles, and administrative functions. Built with focus on user experience and accessibility.',
+        category: ['web', 'design'],
+        tags: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
+        features: [
+            'Responsive design for all devices',
+            'Student information management',
+            'Event and announcement system',
+            'Faculty and staff profiles',
+            'Administrative dashboard',
+            'Contact and inquiry forms',
+            'SEO optimized structure'
+        ],
+        technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'jQuery'],
+        images: [
+            './projects/school/school (1).png',
+            './projects/school/school (2).png',
+            './projects/school/school (3).png',
+            './projects/school/school (4).png'
+        ],
+        liveUrl: 'https://sahil-katariya.github.io/sarasvati-school/',
+        githubUrl: 'https://www.github.com/sahil-katariya/sarasvati-school/',
+        gradient: 'linear-gradient(135deg, #10b981, #3b82f6)'
+    },
+    {
+        id: 2,
+        title: 'ANAV Autonomous Drone Navigation System',
+        description: 'GPS-independent vision-based navigation system for autonomous drone traversal',
+        longDescription: 'Developed a sophisticated GPS-independent, vision-based navigation system for autonomous drone traversal as part of the ISRO Robotics Challenge 2025. The system uses advanced computer vision algorithms and machine learning for real-time navigation and obstacle avoidance.',
+        category: ['mobile', 'fullstack'],
+        tags: ['Python', 'Computer Vision', 'Robotics', 'AI'],
+        features: [
+            'GPS-independent navigation system',
+            'Real-time computer vision processing',
+            'Autonomous obstacle avoidance',
+            'Machine learning-based path planning',
+            'Drone control and stabilization',
+            'Real-time video processing',
+            'Advanced sensor fusion'
+        ],
+        technologies: ['Python', 'OpenCV', 'TensorFlow', 'ROS', 'NumPy', 'Matplotlib'],
+        images: [
+            './projects/anav/anav (1).png',
+            './projects/anav/anav (2).png'
+        ],
+        liveUrl: 'https://github.com/Sahil-Katariya/QuodeCopter',
+        githubUrl: 'https://github.com/Sahil-Katariya/QuodeCopter',
+        gradient: 'linear-gradient(135deg, #ec4899, #f59e0b)'
+    },
+    {
         id: 5,
+        title: 'Animal Heaven',
+        description: 'Web application for animal lovers to share and discover content and connect with other animal lovers',
+        longDescription: 'a pet adoption website where users can post about their pets, find pets to adopt, and connect with other animal lovers.',
+        category: ['fullstack', 'design'],
+        tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
+        features: [
+            'User registration and authentication',
+            'Pet profile creation and management',
+            'Pet adoption and fostering',
+            'Community features for interaction',
+            'Search and filtering options',
+            'Responsive design for all devices',
+            'Admin panel for moderation'
+        ],
+        technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
+        images: [
+            './projects/animalheaven/animalheaven (1).png',
+            './projects/animalheaven/animalheaven (2).png',
+            './projects/animalheaven/animalheaven (3).png'
+        ],
+        liveUrl: '',
+        githubUrl: '',
+        gradient: 'linear-gradient(135deg, #8b5cf6, #ec4899)'
+    },
+    {
+        id: 6,
         title: 'Face Authentication Attendance System',
         description: 'Real-time face detection & logging system for attendance management',
         longDescription: 'Implemented a sophisticated face authentication system for attendance management using real-time face detection and logging. The system uses advanced computer vision algorithms for accurate face recognition, anti-spoofing measures, and comprehensive attendance tracking with detailed analytics.',
@@ -900,12 +928,11 @@ const projectsData = [
         ],
         technologies: ['Python', 'OpenCV', 'dlib', 'Flask', 'SQLite', 'NumPy'],
         images: [
-            'https://via.placeholder.com/800x500/f59e0b/ffffff?text=Face+Recognition',
-            'https://via.placeholder.com/800x500/10b981/ffffff?text=Attendance+Dashboard',
-            'https://via.placeholder.com/800x500/3b82f6/ffffff?text=Analytics+Reports'
+            './projects/attendance/attendance (1).png',
+            './projects/attendance/attendance (2).png'
         ],
-        liveUrl: '#',
-        githubUrl: '#',
+        liveUrl: '',
+        githubUrl: '',
         gradient: 'linear-gradient(135deg, #f59e0b, #10b981)'
     }
 ];
@@ -949,17 +976,17 @@ class ProjectManager {
         card.dataset.projectId = project.id;
 
         card.innerHTML = `
-            <div class="project-image" style="background: ${project.gradient}"></div>
+            <div class="project-image" style="background-image: url('${project.images[0]}')"></div>
             <div class="project-content">
-                <h3>${project.title}</h3>
-                <p>${project.description}</p>
-                <div class="project-tags">
-                    ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
-                </div>
-                <div class="project-links">
-                    <a href="${project.liveUrl}" class="project-link" onclick="event.stopPropagation()">Live Demo</a>
-                    <a href="${project.githubUrl}" class="project-link" onclick="event.stopPropagation()">GitHub</a>
-                </div>
+            <h3>${project.title}</h3>
+            <p>${project.description}</p>
+            <div class="project-tags">
+                ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+            </div>
+            <div class="project-links">
+                <!-- <a href="${project.liveUrl}" class="project-link" onclick="event.stopPropagation()">Live Demo</a> -->
+                <!-- <a href="${project.githubUrl}" class="project-link" onclick="event.stopPropagation()">GitHub</a> -->
+            </div>
             </div>
         `;
 
