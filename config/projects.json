@@ -1,0 +1,196 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "AI-Powered Web Application",
+      "shortDescription": "A full-stack web application that leverages machine learning algorithms to provide intelligent recommendations and data analysis.",
+      "fullDescription": "This comprehensive web application integrates cutting-edge machine learning algorithms to deliver intelligent recommendations and real-time data analysis. Built with a modern tech stack, it features a responsive React frontend, robust Node.js backend, and Python-based ML services. The application processes large datasets to provide actionable insights and personalized user experiences.",
+      "image": "https://via.placeholder.com/400x250/6366f1/ffffff?text=AI+Web+App",
+      "images": [
+        "https://via.placeholder.com/800x500/6366f1/ffffff?text=AI+Web+App+Dashboard",
+        "https://via.placeholder.com/800x500/8b5cf6/ffffff?text=AI+Analytics",
+        "https://via.placeholder.com/800x500/ec4899/ffffff?text=ML+Models"
+      ],
+      "tags": ["React", "Python", "TensorFlow", "Node.js"],
+      "technologies": ["React", "Node.js", "Python", "TensorFlow", "MongoDB", "Express", "JWT", "Docker"],
+      "features": [
+        "Machine learning integration for intelligent recommendations",
+        "Real-time data processing and analytics",
+        "Responsive design optimized for all devices",
+        "Secure user authentication and authorization",
+        "Interactive data visualization dashboards",
+        "RESTful API with comprehensive documentation",
+        "Automated testing and CI/CD pipeline"
+      ],
+      "challenges": [
+        "Integrating ML models with web application architecture",
+        "Optimizing real-time data processing performance",
+        "Ensuring scalability for large datasets"
+      ],
+      "learnings": [
+        "Advanced React patterns and state management",
+        "Machine learning model deployment strategies",
+        "Full-stack application architecture design"
+      ],
+      "liveUrl": "#",
+      "githubUrl": "#",
+      "category": "fullstack",
+      "status": "completed",
+      "startDate": "2024-01-15",
+      "endDate": "2024-04-20",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Robotics Control System",
+      "shortDescription": "An advanced control system for autonomous robots with computer vision capabilities and real-time navigation.",
+      "fullDescription": "A sophisticated robotics control system designed for autonomous navigation and operation. The system integrates computer vision algorithms, sensor fusion, and advanced path planning to enable robots to navigate complex environments safely and efficiently. Built using C++ for performance-critical components and Python for high-level control logic.",
+      "image": "https://via.placeholder.com/400x250/8b5cf6/ffffff?text=Robotics+System",
+      "images": [
+        "https://via.placeholder.com/800x500/8b5cf6/ffffff?text=Robot+Navigation",
+        "https://via.placeholder.com/800x500/6366f1/ffffff?text=Computer+Vision",
+        "https://via.placeholder.com/800x500/ec4899/ffffff?text=Control+Interface"
+      ],
+      "tags": ["C++", "OpenCV", "Arduino", "ROS"],
+      "technologies": ["C++", "OpenCV", "Arduino", "ROS", "Python", "Linux", "LIDAR", "IMU"],
+      "features": [
+        "Computer vision integration for object detection and recognition",
+        "Autonomous navigation with obstacle avoidance",
+        "Real-time control system with low latency",
+        "Sensor fusion for accurate positioning",
+        "Advanced path planning algorithms",
+        "Remote monitoring and control interface",
+        "Modular architecture for easy expansion"
+      ],
+      "challenges": [
+        "Achieving real-time performance for control systems",
+        "Integrating multiple sensors for accurate navigation",
+        "Developing robust obstacle avoidance algorithms"
+      ],
+      "learnings": [
+        "Real-time systems programming in C++",
+        "Computer vision and image processing techniques",
+        "Robotics control theory and implementation"
+      ],
+      "liveUrl": "#",
+      "githubUrl": "#",
+      "category": "robotics",
+      "status": "completed",
+      "startDate": "2023-09-01",
+      "endDate": "2024-02-15",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "Mobile Finance App",
+      "shortDescription": "A comprehensive mobile application for personal finance management with budgeting tools and expense tracking.",
+      "fullDescription": "A feature-rich mobile application designed to help users manage their personal finances effectively. The app provides comprehensive budgeting tools, expense tracking, financial analytics, and secure cloud synchronization. Built with React Native for cross-platform compatibility and Firebase for backend services.",
+      "image": "https://via.placeholder.com/400x250/ec4899/ffffff?text=Finance+App",
+      "images": [
+        "https://via.placeholder.com/800x500/ec4899/ffffff?text=Finance+Dashboard",
+        "https://via.placeholder.com/800x500/8b5cf6/ffffff?text=Budget+Tracking",
+        "https://via.placeholder.com/800x500/6366f1/ffffff?text=Analytics"
+      ],
+      "tags": ["React Native", "Firebase", "Node.js"],
+      "technologies": ["React Native", "Firebase", "Node.js", "Express", "MongoDB", "Chart.js", "Redux"],
+      "features": [
+        "Comprehensive expense tracking and categorization",
+        "Smart budget management with alerts and notifications",
+        "Detailed financial analytics and reporting",
+        "Secure user authentication with biometric support",
+        "Cloud synchronization across multiple devices",
+        "Bill reminders and payment scheduling",
+        "Export data in multiple formats"
+      ],
+      "challenges": [
+        "Implementing secure financial data handling",
+        "Creating intuitive user interface for complex features",
+        "Ensuring cross-platform compatibility"
+      ],
+      "learnings": [
+        "Mobile app development with React Native",
+        "Firebase integration and real-time databases",
+        "Financial data security best practices"
+      ],
+      "liveUrl": "#",
+      "githubUrl": "#",
+      "category": "mobile",
+      "status": "completed",
+      "startDate": "2023-11-01",
+      "endDate": "2024-03-30",
+      "featured": true
+    },
+    {
+      "id": 4,
+      "title": "Portfolio Website",
+      "shortDescription": "A modern, responsive portfolio website showcasing projects, skills, and professional experience.",
+      "fullDescription": "This portfolio website represents a modern approach to personal branding and professional presentation. Built with vanilla JavaScript and modular CSS, it features a clean design, smooth animations, and excellent performance. The site is fully responsive and optimized for SEO and accessibility.",
+      "image": "https://via.placeholder.com/400x250/10b981/ffffff?text=Portfolio+Site",
+      "images": [
+        "https://via.placeholder.com/800x500/10b981/ffffff?text=Portfolio+Home",
+        "https://via.placeholder.com/800x500/6366f1/ffffff?text=Projects+Section",
+        "https://via.placeholder.com/800x500/8b5cf6/ffffff?text=Contact+Form"
+      ],
+      "tags": ["HTML", "CSS", "JavaScript", "Responsive"],
+      "technologies": ["HTML5", "CSS3", "JavaScript", "Intersection Observer", "Service Worker", "PWA"],
+      "features": [
+        "Fully responsive design for all device sizes",
+        "Dark/light theme toggle with system preference detection",
+        "Smooth scroll animations and micro-interactions",
+        "Progressive Web App (PWA) capabilities",
+        "SEO optimized with structured data",
+        "Contact form with validation and submission",
+        "Performance optimized with lazy loading"
+      ],
+      "challenges": [
+        "Creating smooth animations without performance impact",
+        "Implementing PWA features for offline functionality",
+        "Optimizing for Core Web Vitals metrics"
+      ],
+      "learnings": [
+        "Advanced CSS animations and transitions",
+        "Modern JavaScript APIs and best practices",
+        "Web performance optimization techniques"
+      ],
+      "liveUrl": "https://sahilkatariya.dev",
+      "githubUrl": "#",
+      "category": "web",
+      "status": "completed",
+      "startDate": "2024-06-01",
+      "endDate": "2024-07-22",
+      "featured": false
+    }
+  ],
+  "categories": [
+    {
+      "id": "all",
+      "name": "All Projects",
+      "description": "View all projects"
+    },
+    {
+      "id": "fullstack",
+      "name": "Full Stack",
+      "description": "Full-stack web applications"
+    },
+    {
+      "id": "mobile",
+      "name": "Mobile",
+      "description": "Mobile applications"
+    },
+    {
+      "id": "robotics",
+      "name": "Robotics",
+      "description": "Robotics and embedded systems"
+    },
+    {
+      "id": "web",
+      "name": "Web",
+      "description": "Web development projects"
+    },
+    {
+      "id": "ai-ml",
+      "name": "AI/ML",
+      "description": "Artificial Intelligence and Machine Learning"
+    }
+  ]
+}

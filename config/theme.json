@@ -1,0 +1,212 @@
+{
+  "themes": {
+    "dark": {
+      "name": "Dark Theme",
+      "colors": {
+        "primary": {
+          "bg": "#0a0a0a",
+          "bgSecondary": "#1a1a2e",
+          "bgCard": "rgba(255, 255, 255, 0.05)",
+          "text": "#ffffff",
+          "textSecondary": "rgba(255, 255, 255, 0.8)",
+          "textMuted": "rgba(255, 255, 255, 0.6)"
+        },
+        "accent": {
+          "primary": "#6366f1",
+          "secondary": "#8b5cf6",
+          "tertiary": "#ec4899",
+          "success": "#10b981",
+          "warning": "#f59e0b",
+          "error": "#ef4444"
+        },
+        "ui": {
+          "border": "rgba(255, 255, 255, 0.1)",
+          "shadow": "rgba(0, 0, 0, 0.3)",
+          "navbar": "rgba(10, 10, 10, 0.9)",
+          "navbarScrolled": "rgba(10, 10, 10, 0.95)"
+        }
+      },
+      "typography": {
+        "fontFamily": "'Inter', sans-serif",
+        "fontSizes": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.25rem",
+          "2xl": "1.5rem",
+          "3xl": "1.875rem",
+          "4xl": "2.25rem",
+          "5xl": "3rem",
+          "6xl": "3.75rem"
+        },
+        "fontWeights": {
+          "light": 300,
+          "normal": 400,
+          "medium": 500,
+          "semibold": 600,
+          "bold": 700,
+          "extrabold": 800
+        },
+        "lineHeights": {
+          "tight": 1.2,
+          "normal": 1.6,
+          "relaxed": 1.8
+        }
+      },
+      "spacing": {
+        "xs": "0.25rem",
+        "sm": "0.5rem",
+        "md": "1rem",
+        "lg": "1.5rem",
+        "xl": "2rem",
+        "2xl": "3rem",
+        "3xl": "4rem",
+        "4xl": "5rem"
+      },
+      "borderRadius": {
+        "sm": "4px",
+        "md": "8px",
+        "lg": "12px",
+        "xl": "16px",
+        "full": "50%"
+      },
+      "shadows": {
+        "sm": "0 1px 2px rgba(0, 0, 0, 0.05)",
+        "md": "0 4px 6px rgba(0, 0, 0, 0.1)",
+        "lg": "0 10px 15px rgba(0, 0, 0, 0.1)",
+        "xl": "0 20px 25px rgba(0, 0, 0, 0.1)",
+        "2xl": "0 25px 50px rgba(0, 0, 0, 0.25)"
+      }
+    },
+    "light": {
+      "name": "Light Theme",
+      "colors": {
+        "primary": {
+          "bg": "#ffffff",
+          "bgSecondary": "#f8fafc",
+          "bgCard": "rgba(0, 0, 0, 0.05)",
+          "text": "#1a202c",
+          "textSecondary": "#4a5568",
+          "textMuted": "#718096"
+        },
+        "accent": {
+          "primary": "#6366f1",
+          "secondary": "#8b5cf6",
+          "tertiary": "#ec4899",
+          "success": "#10b981",
+          "warning": "#f59e0b",
+          "error": "#ef4444"
+        },
+        "ui": {
+          "border": "rgba(0, 0, 0, 0.1)",
+          "shadow": "rgba(0, 0, 0, 0.1)",
+          "navbar": "rgba(255, 255, 255, 0.9)",
+          "navbarScrolled": "rgba(255, 255, 255, 0.95)"
+        }
+      },
+      "typography": {
+        "fontFamily": "'Inter', sans-serif",
+        "fontSizes": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.25rem",
+          "2xl": "1.5rem",
+          "3xl": "1.875rem",
+          "4xl": "2.25rem",
+          "5xl": "3rem",
+          "6xl": "3.75rem"
+        },
+        "fontWeights": {
+          "light": 300,
+          "normal": 400,
+          "medium": 500,
+          "semibold": 600,
+          "bold": 700,
+          "extrabold": 800
+        },
+        "lineHeights": {
+          "tight": 1.2,
+          "normal": 1.6,
+          "relaxed": 1.8
+        }
+      },
+      "spacing": {
+        "xs": "0.25rem",
+        "sm": "0.5rem",
+        "md": "1rem",
+        "lg": "1.5rem",
+        "xl": "2rem",
+        "2xl": "3rem",
+        "3xl": "4rem",
+        "4xl": "5rem"
+      },
+      "borderRadius": {
+        "sm": "4px",
+        "md": "8px",
+        "lg": "12px",
+        "xl": "16px",
+        "full": "50%"
+      },
+      "shadows": {
+        "sm": "0 1px 2px rgba(0, 0, 0, 0.05)",
+        "md": "0 4px 6px rgba(0, 0, 0, 0.1)",
+        "lg": "0 10px 15px rgba(0, 0, 0, 0.1)",
+        "xl": "0 20px 25px rgba(0, 0, 0, 0.1)",
+        "2xl": "0 25px 50px rgba(0, 0, 0, 0.25)"
+      }
+    }
+  },
+  "animations": {
+    "durations": {
+      "fast": "0.15s",
+      "normal": "0.3s",
+      "slow": "0.6s",
+      "slower": "1s"
+    },
+    "easings": {
+      "linear": "linear",
+      "ease": "ease",
+      "easeIn": "ease-in",
+      "easeOut": "ease-out",
+      "easeInOut": "ease-in-out",
+      "bounce": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+      "smooth": "cubic-bezier(0.4, 0, 0.2, 1)"
+    },
+    "particles": {
+      "count": 50,
+      "speed": 0.5,
+      "size": {
+        "min": 1,
+        "max": 3
+      },
+      "opacity": {
+        "min": 0.2,
+        "max": 0.7
+      },
+      "connectionDistance": 120
+    }
+  },
+  "breakpoints": {
+    "xs": "480px",
+    "sm": "640px",
+    "md": "768px",
+    "lg": "1024px",
+    "xl": "1280px",
+    "2xl": "1536px"
+  },
+  "layout": {
+    "maxWidth": "1200px",
+    "containerPadding": {
+      "mobile": "1rem",
+      "tablet": "2rem",
+      "desktop": "2rem"
+    },
+    "sectionPadding": {
+      "mobile": "3rem 0",
+      "desktop": "5rem 0"
+    }
+  }
+}

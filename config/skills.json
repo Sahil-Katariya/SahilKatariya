@@ -1,0 +1,214 @@
+{
+  "skillCategories": [
+    {
+      "name": "Frontend",
+      "description": "Creating beautiful, responsive user interfaces",
+      "color": "#6366f1",
+      "skills": [
+        {
+          "name": "HTML/CSS",
+          "level": 90,
+          "icon": "🌐",
+          "description": "Semantic markup, modern CSS, animations",
+          "projects": 15,
+          "experience": "3+ years"
+        },
+        {
+          "name": "JavaScript",
+          "level": 85,
+          "icon": "⚡",
+          "description": "ES6+, DOM manipulation, async programming",
+          "projects": 12,
+          "experience": "2+ years"
+        },
+        {
+          "name": "Angular",
+          "level": 85,
+          "icon": "🅰️",
+          "description": "Component architecture, services, routing",
+          "projects": 8,
+          "experience": "2 years"
+        },
+        {
+          "name": "React",
+          "level": 80,
+          "icon": "⚛️",
+          "description": "Hooks, state management, component design",
+          "projects": 6,
+          "experience": "1.5 years"
+        }
+      ]
+    },
+    {
+      "name": "Backend",
+      "description": "Building robust server-side applications",
+      "color": "#8b5cf6",
+      "skills": [
+        {
+          "name": "Python",
+          "level": 88,
+          "icon": "🐍",
+          "description": "Django, Flask, data analysis, automation",
+          "projects": 10,
+          "experience": "3 years"
+        },
+        {
+          "name": "C/C++",
+          "level": 85,
+          "icon": "⚙️",
+          "description": "System programming, embedded systems",
+          "projects": 7,
+          "experience": "2.5 years"
+        },
+        {
+          "name": "SQL/MongoDB",
+          "level": 80,
+          "icon": "🗄️",
+          "description": "Database design, queries, optimization",
+          "projects": 9,
+          "experience": "2 years"
+        },
+        {
+          "name": "Node.js",
+          "level": 85,
+          "icon": "🟢",
+          "description": "Express, APIs, real-time applications",
+          "projects": 8,
+          "experience": "2 years"
+        }
+      ]
+    },
+    {
+      "name": "AI/ML",
+      "description": "Artificial Intelligence and Machine Learning",
+      "color": "#ec4899",
+      "skills": [
+        {
+          "name": "TensorFlow",
+          "level": 75,
+          "icon": "🧠",
+          "description": "Neural networks, deep learning models",
+          "projects": 5,
+          "experience": "1.5 years"
+        },
+        {
+          "name": "OpenCV",
+          "level": 80,
+          "icon": "👁️",
+          "description": "Computer vision, image processing",
+          "projects": 6,
+          "experience": "2 years"
+        },
+        {
+          "name": "Scikit-learn",
+          "level": 78,
+          "icon": "📊",
+          "description": "Machine learning algorithms, data analysis",
+          "projects": 7,
+          "experience": "2 years"
+        },
+        {
+          "name": "Pandas/NumPy",
+          "level": 82,
+          "icon": "🐼",
+          "description": "Data manipulation, numerical computing",
+          "projects": 8,
+          "experience": "2.5 years"
+        }
+      ]
+    },
+    {
+      "name": "DevOps",
+      "description": "Development operations and deployment",
+      "color": "#10b981",
+      "skills": [
+        {
+          "name": "Git/GitHub",
+          "level": 85,
+          "icon": "🔧",
+          "description": "Version control, collaboration, CI/CD",
+          "projects": 12,
+          "experience": "3 years"
+        },
+        {
+          "name": "Docker",
+          "level": 70,
+          "icon": "🐳",
+          "description": "Containerization, deployment",
+          "projects": 4,
+          "experience": "1 year"
+        },
+        {
+          "name": "Linux",
+          "level": 75,
+          "icon": "🐧",
+          "description": "System administration, shell scripting",
+          "projects": 6,
+          "experience": "2 years"
+        },
+        {
+          "name": "AWS/Cloud",
+          "level": 65,
+          "icon": "☁️",
+          "description": "Cloud deployment, serverless functions",
+          "projects": 3,
+          "experience": "8 months"
+        }
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "name": "Python",
+      "icon": "python.svg",
+      "category": "programming"
+    },
+    {
+      "name": "React",
+      "icon": "react.svg",
+      "category": "frontend"
+    },
+    {
+      "name": "OpenCV",
+      "icon": "opencv.svg",
+      "category": "ai-ml"
+    },
+    {
+      "name": "TensorFlow",
+      "icon": "tensorflow.svg",
+      "category": "ai-ml"
+    },
+    {
+      "name": "Angular",
+      "icon": "angular.svg",
+      "category": "frontend"
+    },
+    {
+      "name": "MongoDB",
+      "icon": "mongodb.svg",
+      "category": "database"
+    }
+  ],
+  "expertise": [
+    {
+      "area": "Web Development",
+      "technologies": ["HTML", "CSS", "JavaScript", "React", "Angular", "Node.js"],
+      "level": "Advanced"
+    },
+    {
+      "area": "AI/ML",
+      "technologies": ["Python", "TensorFlow", "OpenCV", "Scikit-learn", "Pandas"],
+      "level": "Intermediate"
+    },
+    {
+      "area": "Robotics",
+      "technologies": ["C++", "Arduino", "Computer Vision", "Embedded Systems"],
+      "level": "Intermediate"
+    },
+    {
+      "area": "Database",
+      "technologies": ["MongoDB", "MySQL", "PostgreSQL", "Firebase"],
+      "level": "Intermediate"
+    }
+  ]
+}

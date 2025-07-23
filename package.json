@@ -1,0 +1,47 @@
+{
+  "name": "sahil-katariya-portfolio",
+  "version": "2.0.0",
+  "description": "Modern, modular portfolio website for Sahil Katariya",
+  "main": "index.html",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node dev-server.js",
+    "dev:port": "node dev-server.js 8080",
+    "serve": "npx http-server . -p 3000 -o",
+    "serve:dist": "npx http-server dist -p 3001 -o",
+    "clean": "rm -rf dist",
+    "lint:css": "echo 'CSS linting would go here'",
+    "lint:js": "echo 'JavaScript linting would go here'",
+    "optimize:images": "echo 'Image optimization would go here'",
+    "deploy": "npm run build && echo 'Deploy script would go here'",
+    "start": "npm run dev"
+  },
+  "keywords": [
+    "portfolio",
+    "web-development",
+    "frontend",
+    "javascript",
+    "css",
+    "html",
+    "responsive",
+    "modern"
+  ],
+  "author": "Sahil Katariya <sahilkatariya2609@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sahilkatariya/portfolio"
+  },
+  "homepage": "https://sahilkatariya.dev",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

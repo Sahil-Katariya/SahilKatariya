@@ -1,0 +1,82 @@
+{
+  "assets": {
+    "icons": {
+      "favicon": {
+        "ico": "assets/icons/favicon.ico",
+        "png": "assets/icons/favicon.png"
+      },
+      "social": {
+        "linkedin": "assets/icons/linkedin.svg",
+        "github": "assets/icons/github.svg",
+        "twitter": "assets/icons/twitter.svg",
+        "dribbble": "assets/icons/dribbble.svg"
+      },
+      "tech": {
+        "python": "assets/icons/tech/python.svg",
+        "react": "assets/icons/tech/react.svg",
+        "angular": "assets/icons/tech/angular.svg",
+        "nodejs": "assets/icons/tech/nodejs.svg",
+        "mongodb": "assets/icons/tech/mongodb.svg",
+        "tensorflow": "assets/icons/tech/tensorflow.svg",
+        "opencv": "assets/icons/tech/opencv.svg"
+      }
+    },
+    "images": {
+      "hero": {
+        "background": "assets/images/hero-bg.jpg",
+        "profile": "assets/images/profile.jpg"
+      },
+      "projects": {
+        "project1": "assets/images/projects/ai-web-app.jpg",
+        "project2": "assets/images/projects/robotics-system.jpg",
+        "project3": "assets/images/projects/finance-app.jpg",
+        "project4": "assets/images/projects/portfolio-website.jpg",
+        "project5": "assets/images/projects/drone-navigation.jpg",
+        "project6": "assets/images/projects/ml-dashboard.jpg"
+      },
+      "achievements": {
+        "isro": "assets/images/achievements/isro-certificate.jpg",
+        "gdg": "assets/images/achievements/gdg-badge.jpg",
+        "hackathon": "assets/images/achievements/hackathon-winner.jpg"
+      }
+    }
+  },
+  "optimization": {
+    "images": {
+      "formats": ["webp", "jpg", "png"],
+      "sizes": {
+        "thumbnail": 150,
+        "small": 300,
+        "medium": 600,
+        "large": 1200,
+        "xlarge": 1920
+      },
+      "quality": {
+        "webp": 85,
+        "jpg": 80,
+        "png": 90
+      }
+    },
+    "icons": {
+      "formats": ["svg", "png"],
+      "sizes": [16, 24, 32, 48, 64, 128, 256]
+    }
+  },
+  "caching": {
+    "strategy": "cache-first",
+    "maxAge": {
+      "images": "1y",
+      "icons": "1y",
+      "fonts": "1y"
+    },
+    "headers": {
+      "Cache-Control": "public, max-age=31536000, immutable",
+      "Expires": "Thu, 31 Dec 2025 23:59:59 GMT"
+    }
+  },
+  "lazyLoading": {
+    "enabled": true,
+    "threshold": "50px",
+    "placeholder": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f0f0f0'/%3E%3C/svg%3E"
+  }
+}

@@ -1,0 +1,55 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://sahilkatariya.dev/sitemap.xml
+
+# Disallow build files and development files
+Disallow: /build.js
+Disallow: /dev-server.js
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /components/
+Disallow: /css/
+Disallow: /js/
+Disallow: /config/
+
+# Allow important files
+Allow: /assets/
+Allow: /dist/
+Allow: /manifest.json
+Allow: /browserconfig.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# Specific bot instructions
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
