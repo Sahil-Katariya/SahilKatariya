@@ -796,8 +796,8 @@ const projectsData = [
         ],
         technologies: ['Python', 'OpenCV', 'QGIS', 'NumPy', 'SciPy', 'Matplotlib'],
         images: [
-            './projects/ldem/ldem (1).jpg',
-            './projects/ldem/ldem (2).jpg'
+            './projects/ldem/ldem(1).jpg',
+            './projects/ldem/ldem(2).jpg'
         ],
         liveUrl: '',
         githubUrl: '',
