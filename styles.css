@@ -91,21 +91,6 @@
   --radius-full: 50px;
 }
 
-.show-more-center {
-  display: flex;
-  justify-content: center; /* centers horizontally */
-  margin-top: 50px; /* space above */
-}
-
-.show-more-btn {
-  padding: 20px 20px;
-  cursor: pointer;
-}
-
-/* .tool-icon img {
-  filter: brightness(0) invert(1);
-} */
-
 * {
   margin: 0;
   padding: 0;
@@ -155,6 +140,12 @@ body {
   overflow-x: hidden;
   transition: background 0.3s ease, color 0.3s ease;
   cursor: none;
+}
+
+.show-more-center {
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  margin-top: 50px; /* space above */
 }
 
 /* Custom Cursor */
@@ -1510,6 +1501,11 @@ select {
   padding: 1rem;
   border-radius: 10px;
   border: 1px solid var(--border-color);
+}
+.skill-bar:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 10px 30px var(--shadow-color);
 }
 
 .skill-info {

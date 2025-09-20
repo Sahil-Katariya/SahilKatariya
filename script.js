@@ -407,10 +407,9 @@ class PageLoader {
     });
   }
 }
-
-// Enhanced Animation Manager
 class AnimationManager {
   constructor() {
+    this.observer = null;
     this.init();
   }
 
@@ -420,46 +419,55 @@ class AnimationManager {
     this.setupMicroInteractions();
   }
 
+  /**
+   * Sets up a single IntersectionObserver to handle all scroll-triggered animations.
+   */
   setupScrollAnimations() {
     const observerOptions = {
       threshold: 0.1,
       rootMargin: "0px 0px -50px 0px",
     };
 
-    const observer = new IntersectionObserver((entries) => {
+    this.observer = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("animated");
+          // Add a generic class to trigger animations defined in CSS
+          entry.target.classList.add("in-view");
 
-          // Special handling for different elements
-          if (entry.target.classList.contains("about-stats")) {
+          // Special handling for elements needing JavaScript animations
+          if (entry.target.matches(".about-stats")) {
             this.animateCounters(entry.target);
           }
-
-          if (entry.target.classList.contains("skills-section")) {
+          if (entry.target.matches(".skills-section")) {
             this.animateSkillBars(entry.target);
           }
+          // The stagger logic is now part of the generic animation via CSS
 
-          if (entry.target.classList.contains("project-card")) {
-            this.staggerProjectCards(entry.target);
-          }
+          // OPTIMIZATION: Stop observing the element once it's animated
+          observer.unobserve(entry.target);
         }
       });
     }, observerOptions);
 
-    // Observe all elements that should animate on scroll
-    document
-      .querySelectorAll(
-        ".about-content, .about-stats, .skills-section, .project-card, .contact-method, .experience-item, .education-item, .achievement-item, .cert-item"
-      )
-      .forEach((el) => {
-        el.classList.add("animate-on-scroll");
-        observer.observe(el);
-      });
+    // Observe all elements with the 'animate-on-scroll' class
+    document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+      this.observer.observe(el);
+    });
+  }
+
+  /**
+   * Public method to allow other parts of the app (e.g., ProjectManager)
+   * to add dynamically created elements to the observer.
+   * @param {HTMLElement} element The element to observe.
+   */
+  observeNewElement(element) {
+    if (element) {
+      this.observer.observe(element);
+    }
   }
 
   setupHoverEffects() {
-    // Add hover effects to cards and buttons
+    // This logic is fine as is.
     document
       .querySelectorAll(
         ".project-card, .tool-item, .contact-method, .stat-item, .experience-item, .education-item, .achievement-item, .cert-item"
@@ -478,7 +486,8 @@ class AnimationManager {
     document
       .querySelectorAll("button, .btn-primary, .btn-secondary")
       .forEach((button) => {
-        button.addEventListener("click", this.createRipple);
+        // FIX: Use an arrow function to ensure context is correct
+        button.addEventListener("click", (e) => this.createRipple(e));
       });
 
     // Add focus animations to form inputs
@@ -486,7 +495,6 @@ class AnimationManager {
       input.addEventListener("focus", () => {
         input.parentElement.classList.add("focused");
       });
-
       input.addEventListener("blur", () => {
         input.parentElement.classList.remove("focused");
       });
@@ -495,29 +503,26 @@ class AnimationManager {
 
   createRipple(e) {
     const button = e.currentTarget;
+    // Ensure the button is positioned to contain the ripple
+    if (getComputedStyle(button).position === "static") {
+      button.style.position = "relative";
+    }
+    button.style.overflow = "hidden";
+
     const ripple = document.createElement("span");
     const rect = button.getBoundingClientRect();
     const size = Math.max(rect.width, rect.height);
     const x = e.clientX - rect.left - size / 2;
     const y = e.clientY - rect.top - size / 2;
 
-    ripple.style.cssText = `
-            position: absolute;
-            width: ${size}px;
-            height: ${size}px;
-            left: ${x}px;
-            top: ${y}px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            transform: scale(0);
-            animation: ripple 0.6s linear;
-            pointer-events: none;
-        `;
+    ripple.style.width = ripple.style.height = `${size}px`;
+    ripple.style.left = `${x}px`;
+    ripple.style.top = `${y}px`;
+    ripple.classList.add("ripple-effect"); // Use a class for cleaner CSS
 
-    button.style.position = "relative";
-    button.style.overflow = "hidden";
     button.appendChild(ripple);
 
+    // Clean up the ripple element after the animation finishes
     setTimeout(() => {
       ripple.remove();
     }, 600);
@@ -527,7 +532,10 @@ class AnimationManager {
     const counters = container.querySelectorAll(".stat-number");
     counters.forEach((counter) => {
       const target = counter.getAttribute("data-target");
-      new CounterAnimation(counter, target).animate();
+      if (target) {
+        // Ensure CounterAnimation class is available
+        new CounterAnimation(counter, target).animate();
+      }
     });
   }
 
@@ -535,21 +543,61 @@ class AnimationManager {
     const skillBars = container.querySelectorAll(".skill-fill");
     skillBars.forEach((bar, index) => {
       const width = bar.getAttribute("data-width");
-      setTimeout(() => {
-        new SkillBarAnimation(bar, width).animate();
-      }, index * 100);
+      if (width) {
+        // Stagger the animation start time for a nice effect
+        setTimeout(() => {
+          // Ensure SkillBarAnimation class is available
+          new SkillBarAnimation(bar, width).animate();
+        }, index * 100);
+      }
     });
   }
 
-  staggerProjectCards(card) {
-    const allCards = document.querySelectorAll(".project-card");
-    const index = Array.from(allCards).indexOf(card);
-    card.style.animationDelay = `${index * 0.1}s`;
-  }
+  // REMOVED: staggerProjectCards() is no longer needed.
+  // Staggering should be handled via CSS transition-delay on child elements
+  // when their parent container gets the 'in-view' class.
 }
+
+// You would also add this CSS for the ripple and stagger effects:
+/*
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+// Example for staggering project cards:
+.projects-grid.in-view .project-card {
+    // This will apply the animation to each card
+}
+
+.projects-grid .project-card:nth-child(1) { transition-delay: 0.1s; }
+.projects-grid .project-card:nth-child(2) { transition-delay: 0.2s; }
+.projects-grid .project-card:nth-child(3) { transition-delay: 0.3s; }
+// etc.
+*/
 
 // Add ripple animation CSS
 const rippleCSS = `
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
 @keyframes ripple {
     to {
         transform: scale(4);
@@ -576,7 +624,7 @@ document.addEventListener("DOMContentLoaded", () => {
   new ThemeManager();
 
   // Initialize animation manager
-  new AnimationManager();
+  const animationManager = new AnimationManager();
 
   // Initialize particles
   const canvas = document.getElementById("particles-canvas");
@@ -596,7 +644,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Initialize project manager
-  new ProjectManager();
+  new ProjectManager(animationManager);
 
   // Initialize contact form
   new ContactForm();
@@ -766,51 +814,6 @@ class SkillBarAnimation {
     }, 300);
   }
 }
-
-// Intersection Observer for animations
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px",
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = "1";
-      entry.target.style.transform = "translateY(0)";
-
-      // Animate counters
-      if (entry.target.classList.contains("about-stats")) {
-        const counters = entry.target.querySelectorAll(".stat-number");
-        counters.forEach((counter) => {
-          const target = counter.getAttribute("data-target");
-          new CounterAnimation(counter, target).animate();
-        });
-      }
-
-      // Animate skill bars
-      if (entry.target.classList.contains("skills-section")) {
-        const skillBars = entry.target.querySelectorAll(".skill-fill");
-        skillBars.forEach((bar) => {
-          const width = bar.getAttribute("data-width");
-          new SkillBarAnimation(bar, width).animate();
-        });
-      }
-    }
-  });
-}, observerOptions);
-
-// Observe elements for animation
-document
-  .querySelectorAll(
-    ".project-card, .about-content, .about-stats, .skills-section, .skill-category"
-  )
-  .forEach((el) => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(30px)";
-    el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-    observer.observe(el);
-  });
 
 // Project Data
 const projectsData = [
@@ -1028,13 +1031,18 @@ const projectsData = [
     gradient: "linear-gradient(135deg, #f59e0b, #10b981)",
   },
 ];
-
 // Project Management Class
 class ProjectManager {
-  constructor() {
+  constructor(animationManager) {
+    // 1. Accept animationManager
     this.projects = projectsData;
+    this.animationManager = animationManager; // Store the instance
     this.currentFilter = "all";
     this.modal = document.getElementById("project-modal");
+
+    this.projectsToShowInitially = 2; // Adjusted for a better initial view
+    this.visibleProjectsCount = this.projectsToShowInitially;
+
     this.init();
   }
 
@@ -1045,11 +1053,9 @@ class ProjectManager {
 
   renderProjects() {
     const grid = document.getElementById("projects-grid");
-    // Add these properties to your class/object
-    this.projectsToShowInitially = 6; // Number of projects to show initially
-    this.projectsPerLoad = 3; // Number of projects to add on "Show More" click
-    this.visibleProjectsCount = this.projectsToShowInitially;
     grid.innerHTML = "";
+
+    const showMoreBtn = document.getElementById("show-more-btn");
 
     const filteredProjects =
       this.currentFilter === "all"
@@ -1058,27 +1064,37 @@ class ProjectManager {
             project.category.includes(this.currentFilter)
           );
 
-    filteredProjects.forEach((project) => {
+    const projectsToRender = filteredProjects.slice(
+      0,
+      this.visibleProjectsCount
+    );
+
+    projectsToRender.forEach((project) => {
       const projectCard = this.createProjectCard(project);
       grid.appendChild(projectCard);
     });
 
-    // Re-observe new elements
-    grid.querySelectorAll(".project-card").forEach((card) => {
-      observer.observe(card);
-    });
+    // 3. The old observer logic is now handled inside createProjectCard, so it's removed from here.
+
+    if (showMoreBtn) {
+      if (this.visibleProjectsCount < filteredProjects.length) {
+        showMoreBtn.style.display = "block";
+      } else {
+        showMoreBtn.style.display = "none";
+      }
+    }
   }
 
   createProjectCard(project) {
     const card = document.createElement("div");
-    card.className = "project-card";
+    card.className = "project-card animate-on-scroll fade-in-up"; // 2. Add animation classes
     card.dataset.projectId = project.id;
 
     card.innerHTML = `
-            <div class="project-image" style="background-image: url('${
-              project.images[0]
-            }')"></div>
-            <div class="project-content">
+        <div class="project-image" style="background-image: url('${
+          project.images[0]
+        }')"></div>
+        <div class="project-content">
             <h3>${project.title}</h3>
             <p>${project.description}</p>
             <div class="project-tags">
@@ -1086,23 +1102,22 @@ class ProjectManager {
                   .map((tag) => `<span class="project-tag">${tag}</span>`)
                   .join("")}
             </div>
-            <div class="project-links">
-                <!-- <a href="${
-                  project.liveUrl
-                }" class="project-link" onclick="event.stopPropagation()">Live Demo</a> -->
-                <!-- <a href="${
-                  project.githubUrl
-                }" class="project-link" onclick="event.stopPropagation()">GitHub</a> -->
-            </div>
-            </div>
-        `;
+        </div>
+    `;
 
     card.addEventListener("click", () => this.openModal(project));
+
+    // 2. Tell the main AnimationManager to observe this new card
+    if (this.animationManager) {
+      this.animationManager.observeNewElement(card);
+    }
+
     return card;
   }
 
   filterProjects(category) {
     this.currentFilter = category;
+    this.visibleProjectsCount = this.projectsToShowInitially;
 
     // Update filter buttons
     document.querySelectorAll(".filter-btn").forEach((btn) => {
@@ -1112,16 +1127,10 @@ class ProjectManager {
       .querySelector(`[data-filter="${category}"]`)
       .classList.add("active");
 
-    // Animate out current projects
     const cards = document.querySelectorAll(".project-card");
-    cards.forEach((card) => {
-      card.classList.add("hidden");
-    });
+    cards.forEach((card) => card.classList.add("hidden"));
 
-    // Render new projects after animation
-    setTimeout(() => {
-      this.renderProjects();
-    }, 300);
+    setTimeout(() => this.renderProjects(), 300);
   }
 
   openModal(project) {
@@ -1190,15 +1199,26 @@ class ProjectManager {
     });
   }
 
+  showMoreProjects() {
+    // Incrementally show more projects instead of all at once
+    const filteredProjects =
+      this.currentFilter === "all"
+        ? this.projects
+        : this.projects.filter((project) =>
+            project.category.includes(this.currentFilter)
+          );
+
+    this.visibleProjectsCount = filteredProjects.length; // Or use an incremental approach: this.visibleProjectsCount += 3;
+    this.renderProjects();
+  }
+
   bindEvents() {
-    // Filter buttons
     document.querySelectorAll(".filter-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
         this.filterProjects(btn.dataset.filter);
       });
     });
 
-    // Modal events
     document
       .getElementById("modal-close")
       .addEventListener("click", () => this.closeModal());
@@ -1206,12 +1226,16 @@ class ProjectManager {
       .getElementById("modal-overlay")
       .addEventListener("click", () => this.closeModal());
 
-    // Escape key to close modal
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && this.modal.classList.contains("active")) {
         this.closeModal();
       }
     });
+
+    const showMoreBtn = document.getElementById("show-more-btn");
+    if (showMoreBtn) {
+      showMoreBtn.addEventListener("click", () => this.showMoreProjects());
+    }
   }
 }
 
