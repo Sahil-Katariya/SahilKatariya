@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sahil Katariya</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" tag="sahil katariya" />
+
+    <meta name="short_description" content="Explore the portfolio of Sahil Katariya, an IT engineering student..." />
+    <meta name="description"
+        content="Detail-oriented IT engineering student with hands-on experience in web development, AI/ML, robotics, Automation and embedded systems Passionate about delivering impactful real-world solutions." />
+    <meta name="keywords" content="Sahil Katariya | Full Stack Developer & AI Engineer" />
+    <meta name="author" content="Sahil Katariya" />
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Sahil Katariya - Full Stack Developer & AI Engineer" />
+    <meta property="og:description"
+        content="Detail-oriented IT engineering student with hands-on experience in web development, AI/ML, robotics, Automation and embedded systems" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sahil-katariya.github.io" />
+    <meta property="og:image" content="https://sahil-katariya.github.io/sahilkatariya/sahil.jpg" />
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sahil Katariya - Full Stack Developer & AI Engineer" />
+    <meta name="twitter:description"
+        content="Detail-oriented IT engineering student with hands-on experience in web development, AI/ML, robotics, Automation and embedded systems" />
+    <meta name="twitter:image" content="https://sahil-katariya.github.io/sahilkatariya/sahil.jpg" />
+
+    <!-- Additional SEO Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    <link rel="canonical" href="https://sahil-katariya.github.io/sahilkatariya" />
+
+    <!-- Performance Optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sahil Katariya",
+        "jobTitle": "Full Stack Developer & AI Engineer",
+        "description": "Detail-oriented IT engineering student with hands-on experience in web development, AI/ML, robotics, Automation and embedded systems",
+        "url": "https://sahil-katariya.github.io/Sahilkatariya",
+        "email": "sahilkatariya2609@gmail.com",
+        "telephone": "+91 8980657423",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bhavnagar",
+          "addressRegion": "Gujarat",
+          "addressCountry": "India"
+        },
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Government Engineering College, Bhavnagar"
+        },
+        "knowsAbout": [
+          "Web Development",
+          "Frontend Development",
+          "Robotics",
+          "Computer Vision",
+          "Python",
+          "C++",
+          "JavaScript",
+          "React",
+          "Backend Development"
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader" id="page-loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <div class="logo-text">Sahil Katariya</div>
+                <div class="loader-progress">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+            </div>
+            <div class="loader-animation">
+                <div class="loader-circle"></div>
+                <div class="loader-circle"></div>
+                <div class="loader-circle"></div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Sahil Katariya</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="particles-container">
+            <canvas id="particles-canvas"></canvas>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-intro">
+                    <span class="greeting">Hello, I'm</span>
+                    <h1 class="hero-name" id="hero-name">Sahil Katariya</h1>
+                </div>
+                <h2 class="hero-title">
+                    <span class="typing-text" id="typing-text"></span>
+                    <span class="cursor">|</span>
+                </h2>
+                <p class="hero-subtitle">
+                    Detail-oriented IT engineering student passionate about delivering
+                    impactful real-world solutions through full-stack and AI
+                    technologies
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#about" class="btn-primary">
+                        <span>About Me</span>
+                        <i class="arrow">→</i>
+                    </a>
+                    <a href="#contact" class="btn-secondary">
+                        <span>Get In Touch</span>
+                        <i class="arrow">→</i>
+                    </a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+                <span>Scroll to explore</span>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-image-container">
+                <div class="hero-image-wrapper">
+                    <img src="./sahil.jpg" alt="Sahil Katariya" class="profile-photo" />
+                    <div class="image-glow"></div>
+                    <div class="image-border"></div>
+                </div>
+                <div class="floating-tech-icons">
+                    <div class="floating-icon floating-icon-1">💻</div>
+                    <div class="floating-icon floating-icon-2">🤖</div>
+                    <div class="floating-icon floating-icon-3">🚀</div>
+                    <div class="floating-icon floating-icon-4">⚛️</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <div class="about-intro">
+                            <h3>Hello! I'm Sahil Katariya</h3>
+                            <p>
+                                A detail-oriented IT engineering student from Bhavnagar,
+                                Gujarat, India, with hands-on experience in web development,
+                                AI/ML, robotics and embedded systems. Currently pursuing
+                                Bachelor of Engineering in Information Technology at
+                                Government Engineering College, Bhavnagar with an impressive
+                                CGPA of 7.76.
+                            </p>
+                        </div>
+
+                        <div class="about-objective">
+                            <h4>Professional Objective</h4>
+                            <p>
+                                Passionate about delivering impactful real-world solutions and
+                                growing in a collaborative, innovation-driven environment
+                                through full-stack and AI technologies. Seeking opportunities
+                                to apply my technical expertise in creating cutting-edge
+                                solutions that make a difference.
+                            </p>
+                        </div>
+
+                        <div class="about-experience">
+                            <h4>Professional Experience</h4>
+                            <div class="experience-timeline">
+                                <div class="experience-item">
+                                    <div class="experience-header">
+                                        <h5>Executive Member - BitsToBytes</h5>
+                                        <span class="experience-date">Aug 2023 - Present</span>
+                                    </div>
+                                    <p class="experience-location">Bhavnagar</p>
+                                    <p class="experience-desc">
+                                        Shared technical ideas, supported team coding sessions,
+                                        and encouraged collaborative learning in a dynamic tech
+                                        community.
+                                    </p>
+                                </div>
+
+                                <div class="experience-item">
+                                    <div class="experience-header">
+                                        <h5>UI/UX Designer - GDG College Chapter</h5>
+                                        <span class="experience-date">Jan 2024 - Present</span>
+                                    </div>
+                                    <p class="experience-location">Bhavnagar</p>
+                                    <p class="experience-desc">
+                                        Designed intuitive UI and apps, ensured brand alignment,
+                                        and assisted with frontend development for various college
+                                        tech initiatives.
+                                    </p>
+                                </div>
+
+                                <div class="experience-item">
+                                    <div class="experience-header">
+                                        <h5>Executive, Finance Club</h5>
+                                        <span class="experience-date">Jan 2022 - 2024</span>
+                                    </div>
+                                    <p class="experience-location">Bhavnagar</p>
+                                    <p class="experience-desc">
+                                        Coordinated events, managed finances, sponsorships, and
+                                        volunteer operations while developing leadership and
+                                        organizational skills.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="about-highlights">
+                            <div class="highlight-item glass-card scale-on-hover">
+                                <div class="highlight-icon">🚀</div>
+                                <div class="highlight-content">
+                                    <h5>Innovation Focus</h5>
+                                    <p>
+                                        Passionate about cutting-edge technologies and innovative
+                                        solutions
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="highlight-item glass-card scale-on-hover">
+                                <div class="highlight-icon">🎯</div>
+                                <div class="highlight-content">
+                                    <h5>Problem Solver</h5>
+                                    <p>
+                                        Analytical mindset with focus on delivering impactful
+                                        real-world solutions
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="highlight-item glass-card scale-on-hover">
+                                <div class="highlight-icon">🌟</div>
+                                <div class="highlight-content">
+                                    <h5>Team Player</h5>
+                                    <p>
+                                        Collaborative approach with strong leadership and
+                                        communication skills
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="about-achievements">
+                            <h4>Key Achievements</h4>
+                            <div class="achievements-grid">
+                                <div class="achievement-item">
+                                    <div class="achievement-icon">🏆</div>
+                                    <div class="achievement-content">
+                                        <h5>Team Lead - DhruvSankalp</h5>
+                                        <p>
+                                            Led autonomous aerial navigation project shortlisted by
+                                            ISRO-URSC, demonstrating exceptional leadership in
+                                            cutting-edge robotics.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="achievement-item">
+                                    <div class="achievement-icon">🚀</div>
+                                    <div class="achievement-content">
+                                        <h5>
+                                            Team lead - SomaDrishti - Bhartiya Antariksh Hackathon
+                                            2025 (ISRO)
+                                        </h5>
+                                        <p>
+                                            Submitted an innovative idea in space technology,
+                                            showcasing problem-solving and technical skills.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="achievement-item">
+                                    <div class="achievement-icon">👥</div>
+                                    <div class="achievement-content">
+                                        <h5>Google Developer Group (GDG)</h5>
+                                        <p>
+                                            Core team member and UI/UX designer contributing to
+                                            innovative tech solutions and community building.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="achievement-item">
+                                    <div class="achievement-icon">🏗️</div>
+                                    <div class="achievement-content">
+                                        <h5>System Architect</h5>
+                                        <p>
+                                            Designed custom drone modular firmware architecture
+                                            showcasing advanced system design capabilities.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="about-certifications">
+                            <h4>Certifications & Learning</h4>
+                            <div class="certifications-list">
+                                <div class="cert-item">
+                                    <span class="cert-icon">🤖</span>
+                                    <div class="cert-details">
+                                        <h5>AI for Manufacturing</h5>
+                                        <p>Intel & GTU</p>
+                                    </div>
+                                </div>
+                                <div class="cert-item">
+                                    <span class="cert-icon">🐍</span>
+                                    <div class="cert-details">
+                                        <h5>Python for Data Science</h5>
+                                        <p>NPTEL</p>
+                                    </div>
+                                </div>
+                                <div class="cert-item">
+                                    <span class="cert-icon">⚛️</span>
+                                    <div class="cert-details">
+                                        <h5>React Frontend Development</h5>
+                                        <p>Udemy</p>
+                                    </div>
+                                </div>
+                                <div class="cert-item">
+                                    <span class="cert-icon">🧠</span>
+                                    <div class="cert-details">
+                                        <h5>AI/ML Machine Learning</h5>
+                                        <p>Acmegrade</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="about-education">
+                            <h4>Education</h4>
+                            <div class="education-timeline">
+                                <div class="education-item">
+                                    <div class="education-header">
+                                        <h5>Bachelor of Engineering in Information Technology</h5>
+                                        <span class="education-date">2022 - 2026</span>
+                                    </div>
+                                    <p class="education-institution">
+                                        Government Engineering College, Bhavnagar
+                                    </p>
+                                    <p class="education-grade">CGPA: 7.76</p>
+                                </div>
+                                <div class="education-item">
+                                    <div class="education-header">
+                                        <h5>12th Science</h5>
+                                        <span class="education-date">March 2022</span>
+                                    </div>
+                                    <p class="education-institution">
+                                        Belur Vidhyalaya, Mahuva
+                                    </p>
+                                    <p class="education-grade">Percentage: 73.69%</p>
+                                </div>
+                                <div class="education-item">
+                                    <div class="education-header">
+                                        <h5>10th</h5>
+                                        <span class="education-date">March 2020</span>
+                                    </div>
+                                    <p class="education-institution">
+                                        Belur Vidhyalaya, Mahuva
+                                    </p>
+                                    <p class="education-grade">Percentage: 84.16%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-section">
+                        <h3>Technical Skills</h3>
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4>Frontend</h4>
+                                <div class="skill-bars">
+                                    <div class="skill-bar">
+                                        <div class="skill-info">
+                                            <span>HTML/CSS</span>
+                                            <span>90%</span>
+                                        </div>
+                                        <div class="skill-progress">
+                                            <div class="skill-fill" data-width="90"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-info">
+                                            <span>JavaScript</span>
+                                            <span>80%</span>
+                                        </div>
+                                        <div class="skill-progress">
+                                            <div class="skill-fill" data-width="85"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-info">
+                                            <span>Angular</span>
+                                            <span>60%</span>
+                                        </div>
+                                        <div class="skill-progress">
+                                            <div class="skill-fill" data-width="85"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-info">
+                                            <span>React</span>
+                                            <span>65%</span>
+                                        </div>
+                                        <div class="skill-progress">
+                                            <div class="skill-fill" data-width="80"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Backend</h4>
+                                <div class="skill-bars">
+                                    <div class="skill-bar">
+                                        <div class="skill-info">
+                                            <span>SQL/MongoDB</span>
+                                            <span>75%</span>
+                                        </div>
+                                        <div class="skill-progress">
+                                            <div class="skill-fill" data-width="80"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-info">
+                                            <span>Node</span>
+                                            <span>65%</span>
+                                        </div>
+                                        <div class="skill-progress">
+                                            <div class="skill-fill" data-width="85"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-info">
+                                            <span>C/C++</span>
+                                            <span>85%</span>
+                                        </div>
+                                        <div class="skill-progress">
+                                            <div class="skill-fill" data-width="85"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-info">
+                                            <span>Python</span>
+                                            <span>60%</span>
+                                        </div>
+                                        <div class="skill-progress">
+                                            <div class="skill-fill" data-width="88"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-stats glass-card">
+                            <div class="stat-item">
+                                <span class="stat-number gradient-text" data-target="5">6+</span>
+                                <span class="stat-label">Projects</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number gradient-text" data-target="6">7+</span>
+                                <span class="stat-label">Competitions</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number gradient-text" data-target="7.76">7.76</span>
+                                <span class="stat-label">CGPA</span>
+                            </div>
+                        </div>
+                        <div class="tools-section">
+                            <h4>Tools & Technologies</h4>
+                            <div class="tools-grid">
+
+                                <div class="tool-item">
+                                    <span class="tool-icon">
+                                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/python.svg"
+                                            alt="Python logo" width="48" height="48">
+                                    </span>
+                                    <span>Python</span>
+                                </div>
+
+                                <div class="tool-item">
+                                    <span class="tool-icon">
+                                        <img src="https://img.icons8.com/?size=256&id=13679&format=png"
+                                            alt="Java logo" width="48" height="48">
+                                    </span>
+                                    <span>Java</span>
+                                </div>
+
+                                <div class="tool-item">
+                                    <span class="tool-icon">
+                                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/cplusplus.svg"
+                                            alt="C++ logo" width="48" height="48">
+                                    </span>
+                                    <span>C++</span>
+                                </div>
+
+                                <div class="tool-item">
+                                    <span class="tool-icon">
+                                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/react.svg"
+                                            alt="React logo" width="48" height="48">
+                                    </span>
+                                    <span>React</span>
+                                </div>
+
+                                <div class="tool-item">
+                                    <span class="tool-icon">
+                                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/angular.svg"
+                                            alt="Angular logo" width="48" height="48">
+                                    </span>
+                                    <span>Angular</span>
+                                </div>
+
+                                <div class="tool-item">
+                                    <span class="tool-icon">
+                                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/mysql.svg"
+                                            alt="MySQL logo" width="48" height="48">
+                                    </span>
+                                    <span>MySQL</span>
+                                </div>
+
+                                <div class="tool-item">
+                                    <span class="tool-icon">
+                                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/mongodb.svg"
+                                            alt="MongoDB logo" width="48" height="48">
+                                    </span>
+                                    <span>MongoDB</span>
+                                </div>
+
+                                <div class="tool-item">
+                                    <span class="tool-icon">
+                                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/tensorflow.svg"
+                                            alt="TensorFlow logo" width="48" height="48">
+                                    </span>
+                                    <span>TensorFlow</span>
+                                </div>
+
+                                <div class="tool-item">
+                                    <span class="tool-icon">
+                                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/opencv.svg"
+                                            alt="OpenCV logo" width="48" height="48">
+                                    </span>
+                                    <span>OpenCV</span>
+                                </div>
+
+                                <div class="tool-item">
+                                    <span class="tool-icon">
+                                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/figma.svg"
+                                            alt="Figma logo" width="48" height="48">
+                                    </span>
+                                    <span>Figma</span>
+                                </div>
+
+                                <div class="tool-item">
+                                    <span class="tool-icon">
+                                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/arduino.svg"
+                                            alt="Arduino logo" width="48" height="48">
+                                    </span>
+                                    <span>Arduino</span>
+                                </div>
+
+                                <div class="tool-item">
+                                    <span class="tool-icon">
+                                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/github.svg"
+                                            alt="GitHub logo" width="48" height="48">
+                                    </span>
+                                    <span>GitHub</span>
+                                </div>
+
+                                <div class="tool-item">
+                                    <span class="tool-icon">
+                                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/swagger.svg"
+                                            alt="Swagger logo" width="48" height="48">
+                                    </span>
+                                    <span>Swagger</span>
+                                </div>
+
+                                <div class="tool-item">
+                                    <span class="tool-icon">
+                                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/tailwindcss.svg"
+                                            alt="Tailwind CSS logo" width="48" height="48">
+                                    </span>
+                                    <span>Tailwind CSS</span>
+                                </div>
+
+                                <div class="tool-item">
+                                    <span class="tool-icon">
+                                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/bootstrap.svg"
+                                            alt="Bootstrap logo" width="48" height="48">
+                                    </span>
+                                    <span>Bootstrap</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects section-padding">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+
+            <!-- Featured Project Showcase -->
+            <div class="featured-project glass-card" id="featured-project">
+                <div class="featured-content">
+                    <div class="featured-info">
+                        <span class="featured-badge">Featured Project</span>
+                        <h3 class="featured-title">Lunar DEM Generation (LDEM)</h3>
+                        <p class="featured-description">
+                            Developed a comprehensive Digital Elevation Model (DEM) pipeline
+                            using mono images for lunar surface mapping. This project was
+                            part of the ISRO Bharatiya Antariksh Hackathon, utilizing
+                            advanced computer vision techniques.
+                        </p>
+                        <div class="featured-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">QGIS</span>
+                            <span class="tech-tag">Computer Vision</span>
+                        </div>
+                        <div class="featured-actions">
+                            <!-- <a href="#" class="btn-primary">View Project</a> -->
+                            <!-- <a href="#" class="btn-secondary">View Code</a> -->
+                        </div>
+                    </div>
+                    <div class="featured-visual">
+                        <div class="featured-image">
+                            <div class="image-placeholder">🌙</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid" id="projects-grid">
+                <!-- Projects will be dynamically loaded -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div class="project-modal" id="project-modal">
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+                <div class="modal-tags" id="modal-tags"></div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image-gallery">
+                    <div class="main-image">
+                        <img id="modal-main-image" src="" alt="" />
+                    </div>
+                    <div class="image-thumbnails" id="modal-thumbnails"></div>
+                </div>
+                <div class="modal-details">
+                    <div class="project-description">
+                        <h3>Project Overview</h3>
+                        <p id="modal-description"></p>
+                    </div>
+                    <div class="project-features">
+                        <h3>Key Features</h3>
+                        <ul id="modal-features"></ul>
+                    </div>
+                    <div class="project-tech">
+                        <h3>Technologies Used</h3>
+                        <div class="tech-stack" id="modal-tech"></div>
+                    </div>
+                    <div class="project-actions">
+                        <a href="${project.LiveUrl}" id="modal-live-link" class="btn-primary" target="_blank">
+                            <span>View Live</span>
+                            <i class="arrow">→</i>
+                        </a>
+                        <a href="${project.githubUrl}" id="modal-github-link" class="btn-secondary" target="_blank">
+                            <span>View Code</span>
+                            <i class="arrow">→</i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Work Together</h2>
+            <div class="contact-content">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-intro">
+                            <h3>Get In Touch</h3>
+                            <p>
+                                Ready to collaborate on innovative projects? I'd love to hear
+                                about your ideas and discuss how we can work together to
+                                create impactful solutions using cutting-edge technologies.
+                            </p>
+                        </div>
+
+                        <div class="contact-methods">
+                            <div class="contact-method glass-card glow-on-hover">
+                                <div class="method-icon">📧</div>
+                                <div class="method-details">
+                                    <h4>Email</h4>
+                                    <p>sahilkatariya2609@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-method glass-card glow-on-hover">
+                                <div class="method-icon">📱</div>
+                                <div class="method-details">
+                                    <h4>Phone</h4>
+                                    <p>+91 8980657423</p>
+                                </div>
+                            </div>
+                            <div class="contact-method glass-card glow-on-hover">
+                                <div class="method-icon">📍</div>
+                                <div class="method-details">
+                                    <h4>Location</h4>
+                                    <p>Bhavnagar, Gujarat, India</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <h4>Follow Me</h4>
+                            <div class="social-icons">
+                                <a href="#" class="social-link magnetic" aria-label="LinkedIn">
+                                    <span>💼</span>
+                                </a>
+                                <a href="#" class="social-link magnetic" aria-label="GitHub">
+                                    <span>🐙</span>
+                                </a>
+                                <a href="#" class="social-link magnetic" aria-label="Twitter">
+                                    <span>🐦</span>
+                                </a>
+                                <a href="#" class="social-link magnetic" aria-label="Dribbble">
+                                    <span>🏀</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required />
+                                <span class="form-error" id="name-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required />
+                                <span class="form-error" id="email-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required />
+                                <span class="form-error" id="subject-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <span class="form-error" id="message-error"></span>
+                            </div>
+
+                            <button type="submit" class="btn-primary submit-btn">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-loading">Sending...</span>
+                                <i class="arrow">→</i>
+                            </button>
+                        </form>
+
+                        <div class="form-success" id="form-success">
+                            <div class="success-icon">✅</div>
+                            <h3>Message Sent!</h3>
+                            <p>
+                                Thank you for reaching out. I'll get back to you as soon as
+                                possible.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
