@@ -91,9 +91,9 @@
     --radius-full: 50px;
 }
 
-.tool-icon img {
+/* .tool-icon img {
   filter: brightness(0) invert(1);
-}
+} */
 
 * {
     margin: 0;
