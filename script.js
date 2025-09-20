@@ -432,7 +432,7 @@ class AnimationManager {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           // Add a generic class to trigger animations defined in CSS
-          entry.target.classList.add("in-view");
+          entry.target.classList.add("animated");
 
           // Special handling for elements needing JavaScript animations
           if (entry.target.matches(".about-stats")) {
@@ -558,35 +558,6 @@ class AnimationManager {
   // when their parent container gets the 'in-view' class.
 }
 
-// You would also add this CSS for the ripple and stagger effects:
-/*
-.ripple-effect {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(0);
-    animation: ripple 0.6s linear;
-    pointer-events: none;
-}
-
-@keyframes ripple {
-    to {
-        transform: scale(4);
-        opacity: 0;
-    }
-}
-
-// Example for staggering project cards:
-.projects-grid.in-view .project-card {
-    // This will apply the animation to each card
-}
-
-.projects-grid .project-card:nth-child(1) { transition-delay: 0.1s; }
-.projects-grid .project-card:nth-child(2) { transition-delay: 0.2s; }
-.projects-grid .project-card:nth-child(3) { transition-delay: 0.3s; }
-// etc.
-*/
-
 // Add ripple animation CSS
 const rippleCSS = `
 .ripple-effect {
@@ -637,9 +608,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (typingElement) {
     new TypingAnimation(typingElement, [
       "Full Stack Developer",
-      "AI/ML Engineer",
       "Robotics Enthusiast",
-      "Computer Vision Expert",
+      "Front End Developer",
+      "Problem Solver",
+      "Back End Developer",
+      "Innovation Driver",
+      "AI/ML Engineer",
     ]);
   }
 
@@ -811,7 +785,7 @@ class SkillBarAnimation {
 
     setTimeout(() => {
       this.element.style.width = `${this.width}%`;
-    }, 300);
+    }, 100);
   }
 }
 
@@ -1286,52 +1260,3 @@ function initializeFloatingAnimations() {
     element.style.animationDelay = `${index * 0.5}s`;
   });
 }
-
-// Initialize everything when DOM is loaded
-document.addEventListener("DOMContentLoaded", function () {
-  // Initialize page loader
-  const pageLoader = new PageLoader();
-
-  // Initialize other components after page loads
-  pageLoader.onComplete(() => {
-    // Initialize particle system
-    const canvas = document.getElementById("particles-canvas");
-    if (canvas) {
-      new ParticleSystem(canvas);
-    }
-
-    // Initialize typing animation
-    const typingElement = document.getElementById("typing-text");
-    if (typingElement) {
-      const texts = [
-        "Full Stack Developer",
-        "AI/ML Engineer",
-        "Robotics Enthusiast",
-        "Problem Solver",
-        "Innovation Driver",
-      ];
-      new TypingAnimation(typingElement, texts, 100);
-    }
-
-    // Initialize theme manager
-    new ThemeManager();
-
-    // Initialize contact form
-    const contactForm = document.getElementById("contact-form");
-    if (contactForm) {
-      new ContactForm();
-    }
-
-    // Initialize mobile menu
-    initMobileMenu();
-
-    // Initialize custom cursor
-    initCustomCursor();
-
-    // Initialize counter animations
-    initializeCounterAnimations();
-
-    // Initialize floating animations
-    initializeFloatingAnimations();
-  });
-});
