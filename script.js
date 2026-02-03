@@ -15,7 +15,7 @@ class ParticleSystem {
     window.addEventListener("themeChanged", (e) => {
       this.theme = e.detail.theme;
     });
-    canvas.addEventListener("mousemove", (e) => {
+    window.addEventListener("mousemove", (e) => {
       this.mouse.x = e.clientX;
       this.mouse.y = e.clientY;
     });

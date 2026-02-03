@@ -86,6 +86,9 @@
 </head>
 
 <body>
+    <div class="particles-container">
+        <canvas id="particles-canvas"></canvas>
+    </div>
     <!-- Page Loader -->
     <div class="page-loader" id="page-loader">
         <div class="loader-content">
@@ -127,56 +130,61 @@
     </nav>
 
     <section id="home" class="hero">
-        <div class="particles-container">
-            <canvas id="particles-canvas"></canvas>
-        </div>
-        <div class="hero-content">
+        <div class="container hero-container">
+            <!-- Text Content -->
             <div class="hero-text">
                 <div class="hero-intro">
                     <span class="greeting">Hello, I'm</span>
-                    <h1 class="hero-name" id="hero-name">Sahil Katariya</h1>
+                    <h1 class="hero-name">Sahil Katariya</h1>
                 </div>
+
                 <h2 class="hero-title">
                     <span class="typing-text" id="typing-text"></span>
                     <span class="cursor">|</span>
                 </h2>
+
                 <p class="hero-subtitle">
                     IT student specializing in full-stack web development—building scalable, production-ready
                     applications with modern frontend, backend, and cloud technologies.
                 </p>
 
-
                 <div class="hero-buttons">
                     <a href="https://drive.google.com/file/d/1u4nIcHQmK_zZKgZbZ_PvsaeHUcL-9Z37" class="btn-primary"
-                        aria-label="Resume" target="_blank">
+                        target="_blank" aria-label="View Resume">
                         <span>Resume</span>
                         <i class="arrow">→</i>
                     </a>
-                    <a href="#about" class="btn-secondary">
+                    <a href="#about" class="btn-secondary" aria-label="About Me">
                         <span>About Me</span>
                         <i class="arrow">→</i>
                     </a>
                 </div>
             </div>
-            <div class="scroll-indicator">
-                <div class="scroll-arrow"></div>
-                <span>Scroll to explore</span>
+
+            <!-- Visual Content (Image + Icons) -->
+            <div class="hero-visual">
+                <div class="visual-wrapper">
+                    <div class="image-container">
+                        <img src="./sahil.jpg" alt="Sahil Katariya" class="profile-photo" />
+                        <div class="glow-effect"></div>
+                        <div class="rotating-border"></div>
+                    </div>
+
+                    <!-- Icons are inside the wrapper to scale WITH the image -->
+                    <div class="tech-icons">
+                        <div class="icon icon-1">💻</div>
+                        <div class="icon icon-2">🤖</div>
+                        <div class="icon icon-3">🚀</div>
+                        <div class="icon icon-4">⚛️</div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="hero-visual">
-            <div class="hero-image-container">
-                <div class="hero-image-wrapper">
-                    <img src="./sahil.jpg" alt="Sahil Katariya" class="profile-photo" />
-                    <div class="image-glow"></div>
-                    <div class="image-border"></div>
-                </div>
-                <div class="floating-tech-icons">
-                    <div class="floating-icon floating-icon-1">💻</div>
-                    <div class="floating-icon floating-icon-2">🤖</div>
-                    <div class="floating-icon floating-icon-3">🚀</div>
-                    <div class="floating-icon floating-icon-4">⚛️</div>
-                </div>
-            </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+            <span>Scroll to explore</span>
         </div>
     </section>
 
