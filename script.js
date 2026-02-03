@@ -308,32 +308,34 @@ class ContactForm {
       this.setLoading(false);
     }
   }
+  
+async submitForm() {
+    const formData = new FormData(this.form);
 
-  async submitForm() {
-    // Simulate API call
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        console.log("Form submitted:", new FormData(this.form));
-        resolve();
-      }, 2000);
-    });
+    try {
+        const response = await fetch("https://formspree.io/f/mpqlnodp", {
+            method: "POST",
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
 
-    // For real implementation, you would use EmailJS or similar service:
-    // To use EmailJS, first sign up at https://www.emailjs.com/
-    // Then create a service, template, and get your public key.
-    // Replace 'your_service_id', 'your_template_id', and 'your_public_key' below.
-    // Uncomment the code after installing the emailjs SDK:
-    // 1. Add <script src="https://cdn.emailjs.com/dist/email.min.js"></script> in your HTML.
-    // 2. Initialize EmailJS: emailjs.init('your_public_key');
-    // 3. Uncomment the code below:
-
-    // return emailjs.sendForm(
-    //     'your_service_id',
-    //     'your_template_id',
-    //     this.form,
-    //     'your_public_key'
-    // );
-  }
+        if (response.ok) {
+            // Success! The promise resolves and your calling code 
+            // can show the #form-success div.
+            return true; 
+        } else {
+            // If Formspree returns an error (e.g., rate limiting)
+            const data = await response.json();
+            throw new Error(data.errors ? data.errors[0].message : "Submission failed");
+        }
+    } catch (error) {
+        console.error("Formspree Error:", error);
+        alert("Oops! There was a problem: " + error.message);
+        throw error; // Propagate error so the loading state can reset
+    }
+}
 
   setLoading(loading) {
     if (loading) {
