@@ -658,9 +658,9 @@ select {
   position: relative;
   z-index: 2;
   animation: fadeInUp 1s ease-out;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 4rem;
+  display: grid; /* Keep Grid */
+  grid-template-columns: 1.2fr 0.8fr; /* BETTER RATIO: Text takes 60%, Image takes 40% */
+  gap: 2rem;
   align-items: center;
   width: 100%;
 }
@@ -937,12 +937,12 @@ select {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* Added to center image vertically */
   gap: 5rem;
   position: relative;
   z-index: 10;
   animation: fadeInRight 0.8s ease-out 0.6s both;
 }
-
 /* Hero Image Container */
 .hero-image-container {
   position: relative;
@@ -953,8 +953,8 @@ select {
 
 .hero-image-wrapper {
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: 450px; /* FIXED SIZE: Changed from 500px to prevent overflow on laptops */
+  height: 450px;
   border-radius: 50%;
   overflow: hidden;
   background: linear-gradient(
@@ -1020,12 +1020,12 @@ select {
 /* Floating Tech Icons */
 .floating-tech-icons {
   position: absolute;
-  width: 500px;
-  height: 500px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%; /* Relative to parent wrapper */
+  height: 100%;
+  top: 0;
+  left: 0;
   pointer-events: none;
+  transform: translate(-50%, -50%);
 }
 
 .floating-icon {
@@ -2559,9 +2559,8 @@ select {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1.5rem;
 }
-/* =========================================
-   RESPONSIVE DESIGN & MEDIA QUERIES
-   ========================================= */
+
+/* RESPONSIVE DESIGN & MEDIA QUERIES */
 
 /* --- Tablet / Small Laptop (1024px and down) --- */
 @media (max-width: 1024px) {
@@ -2569,7 +2568,12 @@ select {
     padding: 0 2rem;
   }
 
-  /* Adjust Hero Text Size */
+  /* Adjust Hero Layout for Tablets */
+  .hero-content {
+    grid-template-columns: 1fr 1fr; /* Equal split */
+    gap: 2rem;
+  }
+
   .hero-name {
     font-size: 3.5rem;
   }
@@ -2579,13 +2583,18 @@ select {
     min-height: auto;
   }
 
+  .hero-image-wrapper {
+    width: 380px; /* Scale down image */
+    height: 380px;
+  }
+
   /* Stack the About Grid earlier for better readability */
   .about-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
 
-  /* Keep Skills in 2 columns on tablet, 1 is too wide */
+  /* Keep Skills in 2 columns on tablet */
   .skills-grid {
     grid-template-columns: 1fr 1fr; 
   }
@@ -2664,20 +2673,49 @@ select {
   }
 
   /* 2. Hero Section Restructure */
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 6rem 1rem 4rem 1rem;
+    align-items: center; /* Center vertically */
+  }
+
   .hero-content {
-    grid-template-columns: 1fr;
+    display: flex;           /* Disable Grid */
+    flex-direction: column;  /* Stack Vertically */
     text-align: center;
     gap: 3rem;
-    padding-top: 6rem; /* Space for navbar */
+    padding-top: 2rem;
   }
 
   .hero-visual {
-    order: -1; /* Move image to top */
+    order: -1; /* Move image ABOVE text */
     margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  .hero-image-wrapper {
+    width: 280px; /* Mobile Size */
+    height: 280px;
+  }
+
+  .floating-tech-icons {
+    width: 340px; /* Just slightly larger than image wrapper */
+    height: 340px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center over image */
   }
 
   .hero-text {
     margin: 0 auto;
+    width: 100%;
+  }
+
+  .hero-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .hero-stats {
@@ -2745,6 +2783,16 @@ select {
     font-size: 1.5rem;
   }
 
+  .hero-image-wrapper {
+    width: 220px;
+    height: 220px;
+  }
+
+  .floating-tech-icons {
+    width: 260px;
+    height: 260px;
+  }
+
   .hero-buttons {
     flex-direction: column;
     width: 100%;
@@ -2755,16 +2803,6 @@ select {
   .hero-buttons .btn-secondary {
     width: 100%;
     justify-content: center;
-  }
-
-  .hero-image-wrapper {
-    width: 220px;
-    height: 220px;
-  }
-
-  .floating-tech-icons {
-    width: 280px;
-    height: 280px;
   }
 
   /* Grid Adjustments */
