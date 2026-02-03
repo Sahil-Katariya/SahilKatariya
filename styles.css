@@ -139,7 +139,11 @@ body {
   );
   overflow-x: hidden;
   transition: background 0.3s ease, color 0.3s ease;
-  cursor: pointer;
+  cursor: auto;
+}
+
+.body.custom-cursor-active {
+    cursor: none;
 }
 
 .show-more-center {

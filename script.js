@@ -637,6 +637,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Custom Cursor
 function initCustomCursor() {
+  if (window.matchMedia("(pointer: fine)").matches) {
+      document.body.classList.add("custom-cursor-active");
   const cursor = document.createElement("div");
   cursor.className = "custom-cursor";
   document.body.appendChild(cursor);
@@ -680,7 +682,7 @@ function initCustomCursor() {
   hoverElements.forEach((el) => {
     el.addEventListener("mouseenter", () => cursor.classList.add("hover"));
     el.addEventListener("mouseleave", () => cursor.classList.remove("hover"));
-  });
+  });}
 }
 
 // Smooth scrolling for navigation links
