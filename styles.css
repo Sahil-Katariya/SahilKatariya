@@ -773,6 +773,42 @@ select {
   animation: pulse 4s ease-in-out infinite;
 }
 
+
+.hero-stats {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  min-width: 300px;
+  animation: fadeInUp 0.8s ease-out 0.8s both;
+}
+
+.hero-stats .stat-item {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.hero-stats .stat-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hero-stats .stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.hero-stats .stat-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 /* --- Floating Icons --- */
 .tech-icons {
   position: absolute;
