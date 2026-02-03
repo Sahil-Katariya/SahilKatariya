@@ -440,28 +440,44 @@ select {
 /* Navigation */
 .navbar {
   position: fixed;
-  top: 0;
-  width: 100%;
+  top: 1.5rem; /* Starts floating from the top */
+  left: 50%;
+  transform: translateX(-50%); /* Centers it horizontally */
+  width: 90%;
+  max-width: 1000px;
   background: var(--navbar-bg);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   z-index: 1000;
-  padding: 1rem 0;
-  transition: background 0.3s ease;
+  padding: 0.8rem 1rem;
+  border-radius: 50px; /* Creates the pill shape */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border for definition */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* State applied by JS when scrolling down */
+.navbar.scrolled {
+  top: 1rem;
+  padding: 0.6rem 1rem;
+  width: 95%; /* Expands slightly on scroll */
+  background: var(--navbar-bg); /* Ensures readability */
 }
 
 .nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  width: 100%;
+  padding: 0 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.25rem;
+  font-weight: 800;
   color: var(--text-primary);
+  letter-spacing: -0.02em;
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
@@ -469,24 +485,32 @@ select {
   display: flex;
   list-style: none;
   gap: 2rem;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-menu a {
   color: var(--text-primary);
   text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
   transition: color 0.3s ease;
   position: relative;
+  padding: 0.5rem 0;
 }
 
+/* Hover Effect: Center Expansion */
 .nav-menu a::after {
   content: "";
   position: absolute;
-  bottom: -5px;
-  left: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 0;
   height: 2px;
   background: var(--accent-primary);
   transition: width 0.3s ease;
+  border-radius: 2px;
 }
 
 .nav-menu a:hover {
@@ -2524,20 +2548,10 @@ select {
 }
 
 @media (max-width: 768px) {
-  .nav-menu {
-    position: fixed;
-    top: 80px;
-    right: -100%;
-    width: 300px;
-    height: calc(100vh - 80px);
-    background: var(--bg-primary);
-    border-left: 1px solid var(--border-color);
-    flex-direction: column;
-    padding: 2rem;
-    gap: 1.5rem;
-    transition: right 0.3s ease;
-    z-index: 999;
-    box-shadow: -5px 0 15px var(--shadow-color);
+  .navbar {
+    width: 95%;
+    top: 1rem;
+    border-radius: 20px; /* Less rounded on mobile */
   }
 
   .nav-menu.active {

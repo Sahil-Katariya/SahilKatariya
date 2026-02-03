@@ -634,34 +634,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Mobile Menu Functionality
-function initMobileMenu() {
-  const mobileToggle = document.getElementById("mobile-menu-toggle");
-  const navMenu = document.querySelector(".nav-menu");
-
-  if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener("click", () => {
-      navMenu.classList.toggle("active");
-      mobileToggle.classList.toggle("active");
-    });
-
-    // Close menu when clicking on a link
-    navMenu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navMenu.classList.remove("active");
-        mobileToggle.classList.remove("active");
-      });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener("click", (e) => {
-      if (!mobileToggle.contains(e.target) && !navMenu.contains(e.target)) {
-        navMenu.classList.remove("active");
-        mobileToggle.classList.remove("active");
-      }
-    });
-  }
-}
 
 // Custom Cursor
 function initCustomCursor() {
@@ -725,24 +697,89 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// Navbar background on scroll
-window.addEventListener("scroll", () => {
-  const navbar = document.querySelector(".navbar");
-  const currentTheme =
-    document.documentElement.getAttribute("data-theme") || "dark";
+document.addEventListener('DOMContentLoaded', () => {
+    
+    /* --- 1. Scroll Effect Logic --- */
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            // When scrolled down 50px, add the 'scrolled' class
+            navbar.classList.add('scrolled');
+        } else {
+            // When at the top, remove the class
+            navbar.classList.remove('scrolled');
+        }
+    });
 
-  if (window.scrollY > 100) {
-    navbar.style.background =
-      currentTheme === "dark"
-        ? "rgba(10, 10, 10, 0.95)"
-        : "rgba(255, 255, 255, 0.95)";
-  } else {
-    navbar.style.background =
-      currentTheme === "dark"
-        ? "rgba(10, 10, 10, 0.9)"
-        : "rgba(255, 255, 255, 0.9)";
-  }
+    /* --- 2. Mobile Menu Logic --- */
+    // Ensure your HTML has these IDs/Classes:
+    // Button: id="mobile-menu-toggle"
+    // Menu List: class="nav-menu"
+    
+    const mobileBtn = document.getElementById('mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+
+    if (mobileBtn && navMenu) {
+        mobileBtn.addEventListener('click', () => {
+            // Toggle the active class on the menu
+            navMenu.classList.toggle('active');
+            
+            // Optional: Animate the hamburger icon lines
+            const spans = mobileBtn.querySelectorAll('span');
+            if (spans.length === 3) {
+                if(navMenu.classList.contains('active')) {
+                    // Turn into X
+                    spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                    spans[1].style.opacity = '0';
+                    spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+                } else {
+                    // Reset to hamburger
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            }
+        });
+
+        // Close menu when a link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                
+                // Reset hamburger icons
+                const spans = mobileBtn.querySelectorAll('span');
+                if (spans.length === 3) {
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            });
+        });
+    }
+
+    /* --- 3. Theme Toggle Logic (Optional) --- */
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Check for saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        body.setAttribute('data-theme', savedTheme);
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    }
 });
+
 
 // Counter Animation
 class CounterAnimation {
