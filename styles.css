@@ -809,6 +809,7 @@ select {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
 /* --- Floating Icons --- */
 .tech-icons {
   position: absolute;
@@ -1088,7 +1089,7 @@ select {
 .about,
 .projects,
 .contact {
-  padding: 5rem 0;
+  padding: 3rem 0;
   color: var(--text-primary);
 }
 
@@ -1158,16 +1159,11 @@ select {
   font-size: 1.1rem;
   line-height: 1.8;
   color: var(--text-secondary);
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
-/* About Sections */
-.about-objective,
-.about-experience,
-.about-achievements,
-.about-certifications,
-.about-education {
-  margin-bottom: 2.5rem;
+.about-certifications{
+margin-top: 2rem;
 }
 
 .about-objective h4,
@@ -1451,6 +1447,7 @@ select {
 
 /* Skills Section */
 .skills-section h3 {
+  position: relative;
   font-size: 1.8rem;
   margin-bottom: 2rem;
   color: var(--text-primary);
@@ -2495,18 +2492,21 @@ select {
 
   /* Refactored Hero Tablet View */
   .hero-container {
-    grid-template-columns: 1fr; /* Stack vertically */
+    grid-template-columns: 1fr;
+    /* Stack vertically */
     text-align: center;
     gap: 3rem;
   }
 
   .hero-text {
     align-items: center;
-    order: 2; /* Text goes bottom */
+    order: 2;
+    /* Text goes bottom */
   }
 
   .hero-visual {
-    order: 1; /* Visual goes top */
+    order: 1;
+    /* Visual goes top */
   }
 
   .visual-wrapper {
@@ -2517,7 +2517,7 @@ select {
   .hero-buttons {
     justify-content: center;
   }
-  
+
   .hero-title {
     justify-content: center;
   }
@@ -2529,7 +2529,7 @@ select {
   }
 
   .skills-grid {
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 1fr 1fr;
   }
 
   .about-stats {
@@ -2540,7 +2540,7 @@ select {
 
 /* --- Mobile / Tablet Portrait (768px and down) --- */
 @media (max-width: 768px) {
-  
+
   /* 1. Navigation Menu - Mobile Drawer Style */
   .navbar {
     width: 90%;
@@ -2556,7 +2556,7 @@ select {
     max-width: 300px;
     height: 100vh;
     background: var(--bg-secondary);
-    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -2582,10 +2582,21 @@ select {
     transform: translateX(0);
   }
 
-  .nav-menu.active li:nth-child(1) { transition-delay: 0.1s; }
-  .nav-menu.active li:nth-child(2) { transition-delay: 0.2s; }
-  .nav-menu.active li:nth-child(3) { transition-delay: 0.3s; }
-  .nav-menu.active li:nth-child(4) { transition-delay: 0.4s; }
+  .nav-menu.active li:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+
+  .nav-menu.active li:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+
+  .nav-menu.active li:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+
+  .nav-menu.active li:nth-child(4) {
+    transition-delay: 0.4s;
+  }
 
   .mobile-menu-toggle {
     display: flex;
@@ -2596,16 +2607,19 @@ select {
   .mobile-menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
+
   .mobile-menu-toggle.active span:nth-child(2) {
     opacity: 0;
   }
+
   .mobile-menu-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -6px);
   }
 
   /* 2. Hero Adjustments for Mobile */
   .hero {
-    padding-top: 6rem; /* Space for navbar */
+    padding-top: 6rem;
+    /* Space for navbar */
   }
 
   /* 3. General Sections */
@@ -2617,11 +2631,11 @@ select {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .featured-visual {
     order: -1;
   }
-  
+
   .featured-image {
     width: 100%;
     max-width: 350px;
@@ -2638,12 +2652,12 @@ select {
     margin: 1rem;
     max-height: 85vh;
   }
-  
+
   .modal-body {
     grid-template-columns: 1fr;
     padding: 1.5rem;
   }
-  
+
   .modal-header h2 {
     font-size: 1.5rem;
     padding-right: 2rem;
@@ -2652,7 +2666,7 @@ select {
 
 /* --- Mobile Small (480px and down) --- */
 @media (max-width: 480px) {
-  
+
   .visual-wrapper {
     width: 280px;
     height: 280px;
@@ -2704,7 +2718,7 @@ select {
   .project-image {
     height: 180px;
   }
-  
+
   .contact-form {
     padding: 1.5rem;
   }
