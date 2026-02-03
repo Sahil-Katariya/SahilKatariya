@@ -88,9 +88,8 @@ class ParticleSystem {
           this.ctx.moveTo(particle.x, particle.y);
           this.ctx.lineTo(otherParticle.x, otherParticle.y);
           const connectionOpacity = this.theme === "dark" ? 0.15 : 0.08;
-          this.ctx.strokeStyle = `rgba(${particleColor}, ${
-            connectionOpacity * (1 - distance / 120)
-          })`;
+          this.ctx.strokeStyle = `rgba(${particleColor}, ${connectionOpacity * (1 - distance / 120)
+            })`;
           this.ctx.lineWidth = 1;
           this.ctx.stroke();
         }
@@ -308,34 +307,34 @@ class ContactForm {
       this.setLoading(false);
     }
   }
-  
-async submitForm() {
+
+  async submitForm() {
     const formData = new FormData(this.form);
 
     try {
-        const response = await fetch("https://formspree.io/f/mpqlnodp", {
-            method: "POST",
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
-
-        if (response.ok) {
-            // Success! The promise resolves and your calling code 
-            // can show the #form-success div.
-            return true; 
-        } else {
-            // If Formspree returns an error (e.g., rate limiting)
-            const data = await response.json();
-            throw new Error(data.errors ? data.errors[0].message : "Submission failed");
+      const response = await fetch("https://formspree.io/f/mpqlnodp", {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
         }
+      });
+
+      if (response.ok) {
+        // Success! The promise resolves and your calling code 
+        // can show the #form-success div.
+        return true;
+      } else {
+        // If Formspree returns an error (e.g., rate limiting)
+        const data = await response.json();
+        throw new Error(data.errors ? data.errors[0].message : "Submission failed");
+      }
     } catch (error) {
-        console.error("Formspree Error:", error);
-        alert("Oops! There was a problem: " + error.message);
-        throw error; // Propagate error so the loading state can reset
+      console.error("Formspree Error:", error);
+      alert("Oops! There was a problem: " + error.message);
+      throw error; // Propagate error so the loading state can reset
     }
-}
+  }
 
   setLoading(loading) {
     if (loading) {
@@ -635,51 +634,52 @@ document.addEventListener("DOMContentLoaded", () => {
 // Custom Cursor
 function initCustomCursor() {
   if (window.matchMedia("(pointer: fine)").matches) {
-      document.body.classList.add("custom-cursor-active");
-  const cursor = document.createElement("div");
-  cursor.className = "custom-cursor";
-  document.body.appendChild(cursor);
+    document.body.classList.add("custom-cursor-active");
+    const cursor = document.createElement("div");
+    cursor.className = "custom-cursor";
+    document.body.appendChild(cursor);
 
-  let mouseX = 0;
-  let mouseY = 0;
-  let cursorX = 0;
-  let cursorY = 0;
+    let mouseX = 0;
+    let mouseY = 0;
+    let cursorX = 0;
+    let cursorY = 0;
 
-  document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
+    document.addEventListener("mousemove", (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
 
-  // Smooth cursor movement
-  function animateCursor() {
-    // cursorX += (mouseX - cursorX) * 0.3; // instead of 0.1
-    // cursorY += (mouseY - cursorY) * 0.3;
+    // Smooth cursor movement
+    function animateCursor() {
+      // cursorX += (mouseX - cursorX) * 0.3; // instead of 0.1
+      // cursorY += (mouseY - cursorY) * 0.3;
 
-    const dx = mouseX - cursorX;
-    const dy = mouseY - cursorY;
-    const distance = Math.sqrt(dx * dx + dy * dy);
+      const dx = mouseX - cursorX;
+      const dy = mouseY - cursorY;
+      const distance = Math.sqrt(dx * dx + dy * dy);
 
-    // speed factor adjusts dynamically
-    const speed = Math.min(0.3, 0.1 + distance / 100);
+      // speed factor adjusts dynamically
+      const speed = Math.min(0.3, 0.1 + distance / 100);
 
-    cursorX += dx * speed;
-    cursorY += dy * speed;
+      cursorX += dx * speed;
+      cursorY += dy * speed;
 
-    cursor.style.left = cursorX + "px";
-    cursor.style.top = cursorY + "px";
+      cursor.style.left = cursorX + "px";
+      cursor.style.top = cursorY + "px";
 
-    requestAnimationFrame(animateCursor);
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Hover effects
+    const hoverElements = document.querySelectorAll(
+      "a, button, .project-card, .tool-item, .contact-method"
+    );
+    hoverElements.forEach((el) => {
+      el.addEventListener("mouseenter", () => cursor.classList.add("hover"));
+      el.addEventListener("mouseleave", () => cursor.classList.remove("hover"));
+    });
   }
-  animateCursor();
-
-  // Hover effects
-  const hoverElements = document.querySelectorAll(
-    "a, button, .project-card, .tool-item, .contact-method"
-  );
-  hoverElements.forEach((el) => {
-    el.addEventListener("mouseenter", () => cursor.classList.add("hover"));
-    el.addEventListener("mouseleave", () => cursor.classList.remove("hover"));
-  });}
 }
 
 // Smooth scrolling for navigation links
@@ -697,86 +697,86 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    
-    /* --- 1. Scroll Effect Logic --- */
-    const navbar = document.querySelector('.navbar');
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            // When scrolled down 50px, add the 'scrolled' class
-            navbar.classList.add('scrolled');
+
+  /* --- 1. Scroll Effect Logic --- */
+  const navbar = document.querySelector('.navbar');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      // When scrolled down 50px, add the 'scrolled' class
+      navbar.classList.add('scrolled');
+    } else {
+      // When at the top, remove the class
+      navbar.classList.remove('scrolled');
+    }
+  });
+
+  /* --- 2. Mobile Menu Logic --- */
+  // Ensure your HTML has these IDs/Classes:
+  // Button: id="mobile-menu-toggle"
+  // Menu List: class="nav-menu"
+
+  const mobileBtn = document.getElementById('mobile-menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  const navLinks = document.querySelectorAll('.nav-menu a');
+
+  if (mobileBtn && navMenu) {
+    mobileBtn.addEventListener('click', () => {
+      // Toggle the active class on the menu
+      navMenu.classList.toggle('active');
+
+      // Optional: Animate the hamburger icon lines
+      const spans = mobileBtn.querySelectorAll('span');
+      if (spans.length === 3) {
+        if (navMenu.classList.contains('active')) {
+          // Turn into X
+          spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
         } else {
-            // When at the top, remove the class
-            navbar.classList.remove('scrolled');
+          // Reset to hamburger
+          spans[0].style.transform = 'none';
+          spans[1].style.opacity = '1';
+          spans[2].style.transform = 'none';
         }
+      }
     });
 
-    /* --- 2. Mobile Menu Logic --- */
-    // Ensure your HTML has these IDs/Classes:
-    // Button: id="mobile-menu-toggle"
-    // Menu List: class="nav-menu"
-    
-    const mobileBtn = document.getElementById('mobile-menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const navLinks = document.querySelectorAll('.nav-menu a');
+    // Close menu when a link is clicked
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
 
-    if (mobileBtn && navMenu) {
-        mobileBtn.addEventListener('click', () => {
-            // Toggle the active class on the menu
-            navMenu.classList.toggle('active');
-            
-            // Optional: Animate the hamburger icon lines
-            const spans = mobileBtn.querySelectorAll('span');
-            if (spans.length === 3) {
-                if(navMenu.classList.contains('active')) {
-                    // Turn into X
-                    spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-                    spans[1].style.opacity = '0';
-                    spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-                } else {
-                    // Reset to hamburger
-                    spans[0].style.transform = 'none';
-                    spans[1].style.opacity = '1';
-                    spans[2].style.transform = 'none';
-                }
-            }
-        });
+        // Reset hamburger icons
+        const spans = mobileBtn.querySelectorAll('span');
+        if (spans.length === 3) {
+          spans[0].style.transform = 'none';
+          spans[1].style.opacity = '1';
+          spans[2].style.transform = 'none';
+        }
+      });
+    });
+  }
 
-        // Close menu when a link is clicked
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                
-                // Reset hamburger icons
-                const spans = mobileBtn.querySelectorAll('span');
-                if (spans.length === 3) {
-                    spans[0].style.transform = 'none';
-                    spans[1].style.opacity = '1';
-                    spans[2].style.transform = 'none';
-                }
-            });
-        });
-    }
+  /* --- 3. Theme Toggle Logic (Optional) --- */
+  const themeToggle = document.getElementById('theme-toggle');
+  const body = document.body;
 
-    /* --- 3. Theme Toggle Logic (Optional) --- */
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
+  // Check for saved theme
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    body.setAttribute('data-theme', savedTheme);
+  }
 
-    // Check for saved theme
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        body.setAttribute('data-theme', savedTheme);
-    }
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
 
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = body.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
-            body.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
-    }
+      body.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+  }
 });
 
 
@@ -1058,8 +1058,8 @@ class ProjectManager {
       this.currentFilter === "all"
         ? this.projects
         : this.projects.filter((project) =>
-            project.category.includes(this.currentFilter)
-          );
+          project.category.includes(this.currentFilter)
+        );
 
     const projectsToRender = filteredProjects.slice(
       0,
@@ -1088,16 +1088,15 @@ class ProjectManager {
     card.dataset.projectId = project.id;
 
     card.innerHTML = `
-        <div class="project-image" style="background-image: url('${
-          project.images[0]
-        }')"></div>
+        <div class="project-image" style="background-image: url('${project.images[0]
+      }')"></div>
         <div class="project-content">
             <h3>${project.title}</h3>
             <p>${project.description}</p>
             <div class="project-tags">
                 ${project.tags
-                  .map((tag) => `<span class="project-tag">${tag}</span>`)
-                  .join("")}
+        .map((tag) => `<span class="project-tag">${tag}</span>`)
+        .join("")}
             </div>
         </div>
     `;
@@ -1176,8 +1175,7 @@ class ProjectManager {
     thumbnailsContainer.innerHTML = project.images
       .map(
         (image, index) =>
-          `<div class="thumbnail ${
-            index === 0 ? "active" : ""
+          `<div class="thumbnail ${index === 0 ? "active" : ""
           }" data-image="${image}">
                 <img src="${image}" alt="${project.title} ${index + 1}">
             </div>`
@@ -1202,8 +1200,8 @@ class ProjectManager {
       this.currentFilter === "all"
         ? this.projects
         : this.projects.filter((project) =>
-            project.category.includes(this.currentFilter)
-          );
+          project.category.includes(this.currentFilter)
+        );
 
     this.visibleProjectsCount = filteredProjects.length; // Or use an incremental approach: this.visibleProjectsCount += 3;
     this.renderProjects();
