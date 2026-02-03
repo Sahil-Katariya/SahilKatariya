@@ -18,10 +18,13 @@
   --border-color-hover: rgba(255, 255, 255, 0.2);
   --shadow-color: rgba(0, 0, 0, 0.3);
   --shadow-color-light: rgba(0, 0, 0, 0.1);
-  --navbar-bg: rgba(10, 10, 10, 0.9);
-  --navbar-bg-scroll: rgba(10, 10, 10, 0.95);
+  --navbar-bg: rgba(111, 111, 111, 0.65); 
+  --navbar-border: rgba(255, 255, 255, 0.5);
+  --navbar-bg-scroll: rgba(70, 69, 69, 0.65); 
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+
 
   /* Animation Timings */
   --transition-fast: 0.2s;
@@ -64,8 +67,9 @@
   --border-color-hover: rgba(0, 0, 0, 0.2);
   --shadow-color: rgba(0, 0, 0, 0.1);
   --shadow-color-light: rgba(0, 0, 0, 0.05);
-  --navbar-bg: rgba(255, 255, 255, 0.9);
-  --navbar-bg-scroll: rgba(255, 255, 255, 0.95);
+  --navbar-bg: rgba(255, 255, 255, 0.65); 
+  --navbar-border: rgba(255, 255, 255, 0.5);
+  --navbar-bg-scroll: rgba(70, 69, 69, 0.65); 
   --glass-bg: rgba(0, 0, 0, 0.05);
   --glass-border: rgba(0, 0, 0, 0.1);
 
