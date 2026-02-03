@@ -354,7 +354,7 @@ async submitForm() {
     // Hide success message after 5 seconds
     setTimeout(() => {
       this.successMessage.classList.remove("show");
-    }, 5000);
+    }, 3000);
   }
 }
 
@@ -624,9 +624,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize contact form
   new ContactForm();
-
-  // Initialize mobile menu
-  initMobileMenu();
 
   // Initialize custom cursor (desktop only)
   if (window.innerWidth > 768) {
